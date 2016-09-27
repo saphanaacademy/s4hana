@@ -1,0 +1,50 @@
+************************
+**
+**  airport view
+**
+************************
+
+name:		ZX##_I_AIRPORT
+
+description:	Airport, private view, VDM interface view
+
+@AbapCatalog.sqlViewName: 'ZX##_IAIRPORT'           
+@AccessControl.authorizationCheck: #NOT_REQUIRED 
+@EndUserText.label: 'Airport'  
+@Analytics.dataCategory: #DIMENSION               
+@Analytics.dataExtraction.enabled: true                        
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'Airport'                               
+
+define view ZX##_I_Airport as                 
+select from sairport {
+  @ObjectModel.text.element:  [ 'AirportName' ] 
+  key sairport.id     as Airport,
+  @Semantics.text
+  sairport.name       as AirportName,
+  sairport.time_zone  as AirportTimeZone                 
+}
+
+
+************************
+**
+**  airport query view
+**
+************************
+
+name:		ZX##_C_AirportQuery 
+
+description:	Airport query, public view, VDM consumption view
+
+@AbapCatalog.sqlViewName: 'ZX##_CAIRPORTQ'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airport query'
+@OData.publish: true
+@VDM.viewType: #CONSUMPTION
+
+define view ZX##_C_AirportQuery as 
+select from ZX##_I_Airport {
+    key ZX##_I_Airport.Airport, 
+    ZX##_I_Airport.AirportName,
+    ZX##_I_Airport.AirportTimeZone
+} 
