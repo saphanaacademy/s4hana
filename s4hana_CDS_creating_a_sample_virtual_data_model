@@ -1,7 +1,7 @@
 --------------------
 -- This syntax is for the following SAP HANA Academy S/4HANA playlist:
 -- 
--- 	Modeling with S/4HANA CDS - Creating a Sample Virtual Data Model 
+--  Modeling with S/4HANA CDS - Creating a Sample Virtual Data Model 
 --  goo.gl/kJRxsv
 --
 --  In the names and syntax of the views substitute "##" with letters representing your ABAP CDS namespace.
