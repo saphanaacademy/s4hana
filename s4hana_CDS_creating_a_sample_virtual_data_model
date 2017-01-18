@@ -336,3 +336,16 @@ select from ZX##_I_FlightByAirport {
     ZX##_I_FlightByAirport.MaximumNumberOfSeats - ZX##_I_FlightByAirport.NumberOfOccupiedSeats as NumberOfAvailableSeats
 }
 
+
+--------------------
+--
+-- odata URL examples
+--
+--------------------
+
+https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZX##_C_FLIGHTBYAIRPORTQ_CDS/$metadata
+
+https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZX##_C_FLIGHTBYAIRPORTQ_CDS/ZX##_C_FLIGHTBYAIRPORTQUERY?$filter=AirportFrom%20eq%20%27FRA%27&$top=5&$orderby=NumberOfAvailableSeats%20desc&$format=json
+
+https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZX##_C_FLIGHTBYAIRPORTQ_CDS/ZX##_C_FLIGHTBYAIRPORTQUERY?$filter=AirportFrom%20eq%20%27FRA%27&$select=Airline,AirportTo,FlightConnection,NumberOfAvailableSeats&$format=json
+
