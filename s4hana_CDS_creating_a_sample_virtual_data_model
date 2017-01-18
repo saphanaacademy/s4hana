@@ -1,0 +1,338 @@
+--------------------
+-- This syntax is for the following SAP HANA Academy S/4HANA playlist:
+-- 
+-- 	Modeling with S/4HANA CDS - Creating a Sample Virtual Data Model
+--
+-- 	https://www.youtube.com/playlist?list=PLkzo92owKnVxO-jWmOWugBv_9WQiq8wLc
+--
+-- In the names and syntax of the views substitute "##" with letters representing your ABAP CDS namespace.
+--
+--------------------
+
+
+--------------------
+--
+-- name: ZX##I_AIRLINE
+--
+-- description:	Airline, private view, VDM interface view
+--
+--------------------	
+
+@AbapCatalog.sqlViewName: 'ZX##IAIRLINE'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airline'
+@VDM.viewType: #BASIC
+@Analytics.dataCategory: #DIMENSION
+@Analytics.dataExtraction.enabled: true 
+@ObjectModel.representativeKey: 'Airline' 
+
+define view ZX##I_Airline as
+select from scarr 
+association [0..1] to ZX##_I_AirlineText as _Text
+    on $projection.Airline = _Text.Airline
+{
+    key scarr.carrid    as Airline,
+    @Semantics.currencyCode: true
+    scarr.currcode      as AirlineLocalCurrency,
+    @Semantics.url: true
+    scarr.url           as AirlineURI,
+    _Text
+}
+
+
+--------------------
+--
+-- name: ZX##_C_AIRLINEQUERY
+--
+-- description:	Airline query, public view, VDM consumption view
+--
+--------------------	
+
+@AbapCatalog.sqlViewName: 'ZX##CAIRLINEQ'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airline'
+@VDM.viewType: #CONSUMPTION
+@OData.publish: true
+define view zx##C_AirlineQuery as select from zx##I_Airline {
+    key zx##I_Airline.Airline, 
+    zx##I_Airline.AirlineLocalCurrency, 
+    zx##I_Airline.AirlineURI
+}
+
+
+--------------------
+--
+-- name: ZX##_I_AIRLINETEXT	
+--
+-- description:	Airline text, private view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IAIRLINET'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airline Name'
+@ObjectModel.dataCategory: #TEXT
+@Analytics.dataExtraction.enabled: true
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'Airline'
+
+define view ZX##_I_AirlineText as 
+select from scarr {
+    key scarr.carrid as Airline,
+    //@Semantics.language: true
+    //key spras as Language,
+    @Semantics.text: true
+    @EndUserText.label: 'Airline Name'
+    scarr.carrname as AirlineName
+}
+
+
+--------------------
+--
+-- name: ZX##_I_AIRPORT	
+--
+-- description:	Airport, private view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IAIRPORT'           
+@AccessControl.authorizationCheck: #NOT_REQUIRED 
+@EndUserText.label: 'Airport'  
+@Analytics.dataCategory: #DIMENSION               
+@Analytics.dataExtraction.enabled: true                        
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'Airport'                               
+
+define view ZX##_I_Airport as                 
+select from sairport {
+  @ObjectModel.text.element:  [ 'AirportName' ] 
+  key sairport.id     as Airport,
+  @Semantics.text
+  sairport.name       as AirportName,
+  sairport.time_zone  as AirportTimeZone                 
+}
+
+
+--------------------
+--
+-- name: ZX##_I_AIRCRAFTTYPE	
+--
+-- description:	Aircraft type, private view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IAIRCRAFTT'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Aircraft Type'
+@Analytics.dataCategory: #DIMENSION 
+@Analytics.dataExtraction.enabled: true
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'AircraftType' 
+
+define view ZX##_I_AircraftType as 
+select from saplane {
+    key saplane.planetype as AircraftType,
+    @Semantics.text: true
+    saplane.producer as AircraftManufacturer
+}
+
+
+--------------------
+--
+-- name: ZX##_I_FLIGHTCONNECTION	
+--
+-- description:	Flight connection, private view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IFCONN'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Flight Connection'
+@Analytics.dataCategory: #DIMENSION
+@Analytics.dataExtraction.enabled: true
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'FlightConnection'
+
+define view ZX##_I_FlightConnection as 
+select from spfli
+association [0..1] to ZX##I_Airline as _Airline
+    on $projection.Airline = _Airline.Airline
+association [0..1] to ZX##_I_Airport as _AirportFrom
+    on $projection.AirportFrom = _AirportFrom.Airport 
+association [0..1] to ZX##_I_Airport as _AirportTo
+    on $projection.AirportTo = _AirportTo.Airport 
+             
+{
+    @ObjectModel.foreignKey.association: '_Airline'
+    key spfli.carrid as Airline,
+    key spfli.connid as FlightConnection, 
+    spfli.countryfr as CountryFrom, 
+    spfli.cityfrom as CityFrom, 
+    @ObjectModel.foreignKey.association: '_AirportFrom'
+    spfli.airpfrom as AirportFrom, 
+    spfli.countryto as CountryTo, 
+    spfli.cityto as CityTo, 
+    @ObjectModel.foreignKey.association: '_AirportTo'
+    spfli.airpto as AirportTo, 
+    spfli.fltime as FlightDurationInMinutes, 
+    spfli.deptime as DepartureTime, 
+    spfli.arrtime as ArrivalTime,
+    @Semantics.quantity.unitOfMeasure: 'DistanceUnit' 
+    @DefaultAggregation: #SUM
+    spfli.distance as Distance, 
+    @Semantics.unitOfMeasure: true
+    spfli.distid as DistanceUnit, 
+    spfli.period as ArrivalDateShiftInDays,
+    /* Associations */
+    _Airline, 
+    _AirportFrom, 
+    _AirportTo
+}
+
+
+--------------------
+--
+-- name: ZX##_I_FLIGHT	
+--
+-- description:	Flight, private view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IFLIGHT'
+@ClientDependent: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Flight'
+@Analytics.dataCategory: #CUBE
+@Analytics.dataExtraction.enabled: true
+@VDM.viewType: #BASIC 
+
+define view ZX##_I_Flight as 
+select from sflight
+association [0..1] to ZX##I_Airline as _Airline
+    on $projection.Airline = _Airline.Airline 
+association [1] to ZX##_I_FlightConnection as _FlightConnection
+    on $projection.Airline = _FlightConnection.Airline
+    and $projection.FlightConnection = _FlightConnection.FlightConnection
+association [1] to ZX##_I_AircraftType as _AircraftType
+    on $projection.AircraftType = _AircraftType.AircraftType
+
+{
+    @ObjectModel.foreignKey.association: '_Airline'
+    key carrid  as Airline,
+    @ObjectModel.foreignKey.association: '_FlightConnection'
+    key connid  as FlightConnection,
+    key fldate  as FlightDate,
+    @Semantics.amount.currencyCode: 'Currency'
+    @DefaultAggregation: #MIN
+    price       as FlightPrice,
+    @Semantics.currencyCode: true
+    currency    as Currency,
+    @ObjectModel.foreignKey.association: '_AircraftType'
+    planetype   as AircraftType,
+    @DefaultAggregation: #SUM
+    seatsmax    as MaximumNumberOfSeats,
+    @DefaultAggregation: #SUM
+    seatsocc    as NumberOfOccupiedSeats,
+    @Semantics.amount.currencyCode: 'Currency'
+    @DefaultAggregation: #SUM
+    paymentsum  as CurrentBookingsTotalAmount,
+    /* Associations */
+    _Airline, 
+    _FlightConnection, 
+    _AircraftType
+}
+
+
+--------------------
+--
+-- name: ZX##_I_FLIGHTBYAIRPORT	
+--
+-- description:	Flight by airport, composite view, VDM interface view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_IFLIGHTA'
+@ClientDependent: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Flight (by airport)'
+@Analytics.dataCategory: #CUBE
+@VDM.viewType: #COMPOSITE
+
+define view ZX##_I_FlightByAirport as 
+select from ZX##_I_Flight {
+    @ObjectModel.foreignKey.association: '_Airline'
+    key ZX##_I_Flight.Airline, 
+    @ObjectModel.foreignKey.association: '_FlightConnection'
+    key ZX##_I_Flight.FlightConnection, 
+    key ZX##_I_Flight.FlightDate, 
+    @ObjectModel.foreignKey.association: '_AirportFrom'
+    key ZX##_I_Flight._FlightConnection.AirportFrom,
+    @ObjectModel.foreignKey.association: '_AirportTo'
+    key ZX##_I_Flight._FlightConnection.AirportTo,
+    @Semantics.currencyCode: true
+    key ZX##_I_Flight.Currency, 
+    @ObjectModel.foreignKey.association: '_AircraftType'
+    key ZX##_I_Flight.AircraftType, 
+    @Semantics.amount.currencyCode: 'Currency'
+    @DefaultAggregation: #MIN
+    ZX##_I_Flight.FlightPrice,
+    @DefaultAggregation: #SUM
+    ZX##_I_Flight.MaximumNumberOfSeats, 
+    @DefaultAggregation: #SUM
+    ZX##_I_Flight.NumberOfOccupiedSeats,
+    @DefaultAggregation: #SUM 
+    ZX##_I_Flight.CurrentBookingsTotalAmount,
+    /* Associations */
+    ZX##_I_Flight._AircraftType, 
+    ZX##_I_Flight._Airline, 
+    ZX##_I_Flight._FlightConnection,
+    ZX##_I_Flight._FlightConnection._AirportFrom,
+    ZX##_I_Flight._FlightConnection._AirportTo
+}
+
+
+--------------------
+--
+-- name: ZX##_C_FLIGHTBYAIRPORTQUERY
+--
+-- description:	Flight by airport query, public view, VDM consumption view
+--
+--------------------
+
+@AbapCatalog.sqlViewName: 'ZX##_CFLIGHTAQ'
+@ClientDependent: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Available Flights'
+@Analytics.query: true
+@OData.publish: true
+@VDM.viewType: #CONSUMPTION
+
+define view ZX##_C_FlightByAirportQ as 
+select from ZX##_I_FlightByAirport {
+    @AnalyticsDetails.query.axis: #ROWS
+    ZX##_I_FlightByAirport.Airline, 
+    @AnalyticsDetails.query.axis: #ROWS
+    ZX##_I_FlightByAirport.FlightConnection, 
+    @AnalyticsDetails.query.axis: #ROWS
+    ZX##_I_FlightByAirport.FlightDate, 
+    @Consumption.filter: { selectionType: #SINGLE, multipleSelections: false, mandatory: true }
+    @AnalyticsDetails.query.axis: #ROWS
+    @EndUserText.label: 'Departure Airport'
+    ZX##_I_FlightByAirport.AirportFrom, 
+    @Consumption.filter: { selectionType: #SINGLE, multipleSelections: false, mandatory: false }
+    @AnalyticsDetails.query.axis: #ROWS
+    @EndUserText.label: 'Arrival Airport'
+    ZX##_I_FlightByAirport.AirportTo, 
+    ZX##_I_FlightByAirport.Currency, 
+    ZX##_I_FlightByAirport.AircraftType, 
+    @AnalyticsDetails.query.axis: #COLUMNS
+    ZX##_I_FlightByAirport.FlightPrice, 
+    ZX##_I_FlightByAirport.MaximumNumberOfSeats, 
+    ZX##_I_FlightByAirport.NumberOfOccupiedSeats,
+    @DefaultAggregation: #FORMULA
+    @AnalyticsDetails.query.axis: #COLUMNS
+    @EndUserText.label: 'Available Seats'
+    ZX##_I_FlightByAirport.MaximumNumberOfSeats - ZX##_I_FlightByAirport.NumberOfOccupiedSeats as NumberOfAvailableSeats
+}
+
