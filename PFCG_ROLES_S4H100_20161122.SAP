@@ -1,0 +1,821 @@
+DATE                                              20161122                                          224825
+RELEASE                                           750
+LOADED_AGRS                                       ZSAP_UI2_ADMIN_700
+LOADED_AGRS                                       ZSAP_UI2_USER_700
+LOADED_AGRS                                       Z_RDS_BR
+LOADED_AGRS                                       Z_RT_ADMIN
+AGR_DEFINE                                        100ZSAP_UI2_ADMIN_700                                          BPINST      20151105133818000000000000000BPINST      20151105134119000000000000000
+AGR_DEFINE                                        100ZSAP_UI2_USER_700                                           BPINST      20151105134147000000000000000BPINST      20151116210033000000000000000
+AGR_DEFINE                                        100Z_RDS_BR                                                    BPINST      20151116214524000000000000000BPINST      20160217204524000000000000000
+AGR_DEFINE                                        100Z_RT_ADMIN                                                  BPINST      20151105125901000000000000000BPINST      20151105130238000000000000000
+AGR_TCODES                                        100ZSAP_UI2_ADMIN_700            TR/UI2/FEEDBACK_SETUP                              X 00000
+AGR_TCODES                                        100ZSAP_UI2_ADMIN_700            TR/UI2/INVAL_CACHES                                X 00000
+AGR_TCODES                                        100ZSAP_UI2_USER_700             TR/UI2/FLP                                         X 00000
+AGR_1250                                          100ZSAP_UI2_ADMIN_700            000001S_SERVICE T-SH61000300    S  O000004
+AGR_1250                                          100Z_RT_ADMIN                    000001S_ADMI_FCDT-SH61000200    U  O000029System Authorizations
+AGR_1250                                          100Z_RT_ADMIN                    000002S_ALV_LAYOT-SH61000200    U  O000062ALV Standard Layout
+AGR_1250                                          100Z_RT_ADMIN                    000003S_BGRFC   T-SH61000200    U  O000004Authorization Object for NW bgRFC
+AGR_1250                                          100Z_RT_ADMIN                    000004S_CTS_ADMIT-SH61000200    U  O000032Administration Functions in Change and Transport System
+AGR_1250                                          100Z_RT_ADMIN                    000005S_CTS_SADMT-SH61000200    U  O000035System-Specific Administration (Transport)
+AGR_1250                                          100Z_RT_ADMIN                    000006S_DATASET T-SH61000200    U  O000040Authorization for file access
+AGR_1250                                          100Z_RT_ADMIN                    000007S_ICF     T-SH61000200    U  O000010Authorization Check for ICF Access
+AGR_1250                                          100Z_RT_ADMIN                    000008S_ICF_ADM T-SH61000200    U  O000014Administration for Internet Communication Framework
+AGR_1250                                          100Z_RT_ADMIN                    000009S_RFC     T-SH61000200    U  O000020Authorization Check for RFC Access
+AGR_1250                                          100Z_RT_ADMIN                    000010S_RZL_ADM T-SH61000200    U  O000045CCMS: System Administration
+AGR_1250                                          100Z_RT_ADMIN                    000011S_SRT_ADM T-SH61000200    U  O000048Administration/Configuration of SOAP Runtime
+AGR_1250                                          100Z_RT_ADMIN                    000012S_TABU_DIST-SH61000200    U  O000052Table Maintenance (using standard tools such as SM30)
+AGR_1250                                          100Z_RT_ADMIN                    000013S_TCODE   T-SH61000200    U  O000025Transaction Code Check at Transaction Start
+AGR_1250                                          100Z_RT_ADMIN                    000014S_TRANSPRTT-SH61000200    U  O000057Transport Organizer
+AGR_1250                                          100ZSAP_UI2_ADMIN_700            000002S_TCODE   T-SH61000300    S  O000008Transaction Code Check at Transaction Start
+AGR_1250                                          100ZSAP_UI2_USER_700             000001S_RFCACL  T-SH61000400    U  O000011Authorization Check for RFC User (e.g. Trusted System)
+AGR_1250                                          100ZSAP_UI2_USER_700             000002S_SERVICE T-SH61000400    S  O000004Check at Start of External Services
+AGR_1250                                          100ZSAP_UI2_USER_700             000003S_TCODE   T-SH61000400    S  O000008Transaction Code Check at Transaction Start
+AGR_1251                                          100Z_RT_ADMIN                    000026S_RFC     T-SH61000200    ACTVT     16                                                                              U  O000021
+AGR_1251                                          100Z_RT_ADMIN                    000015S_DATASET T-SH61000200    ACTVT     06                                                                              U  O000041
+AGR_1251                                          100Z_RT_ADMIN                    000016S_DATASET T-SH61000200    ACTVT     33                                                                              U  O000041
+AGR_1251                                          100Z_RT_ADMIN                    000017S_DATASET T-SH61000200    ACTVT     34                                                                              U  O000041
+AGR_1251                                          100Z_RT_ADMIN                    000092S_TRANSPRTT-SH61000200    ACTVT     01                                                                              U  O000058
+AGR_1251                                          100Z_RT_ADMIN                    000093S_TRANSPRTT-SH61000200    ACTVT     02                                                                              U  O000058
+AGR_1251                                          100Z_RT_ADMIN                    000094S_TRANSPRTT-SH61000200    ACTVT     03                                                                              U  O000058
+AGR_1251                                          100Z_RT_ADMIN                    000095S_TRANSPRTT-SH61000200    ACTVT     23                                                                              U  O000058
+AGR_1251                                          100Z_RT_ADMIN                    000096S_TRANSPRTT-SH61000200    ACTVT     43                                                                              U  O000058
+AGR_1251                                          100Z_RT_ADMIN                    000046S_TABU_DIST-SH61000200    ACTVT     02                                                                              U  O000053
+AGR_1251                                          100Z_RT_ADMIN                    000047S_TABU_DIST-SH61000200    ACTVT     03                                                                              U  O000053
+AGR_1251                                          100Z_RT_ADMIN                    000041S_RZL_ADM T-SH61000200    ACTVT     01                                                                              U  O000046
+AGR_1251                                          100Z_RT_ADMIN                    000042S_RZL_ADM T-SH61000200    ACTVT     03                                                                              U  O000046
+AGR_1251                                          100Z_RT_ADMIN                    000043S_RZL_ADM T-SH61000200    ACTVT     07                                                                              U  O000046
+AGR_1251                                          100Z_RT_ADMIN                    000004S_ALV_LAYOT-SH61000200    ACTVT     23                                                                              U  O000063
+AGR_1251                                          100Z_RT_ADMIN                    000022S_ICF_ADM T-SH61000200    ACTVT     *                                                                               U  O000015
+AGR_1251                                          100Z_RT_ADMIN                    000005S_BGRFC   T-SH61000200    ACTVT     01                                                                              U  O000005
+AGR_1251                                          100Z_RT_ADMIN                    000006S_BGRFC   T-SH61000200    ACTVT     02                                                                              U  O000005
+AGR_1251                                          100Z_RT_ADMIN                    000007S_BGRFC   T-SH61000200    ACTVT     03                                                                              U  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000008S_RFCACL  T-SH61000400    ACTVT     *                                                                               U  O000012
+AGR_1251                                          100Z_RT_ADMIN                    000044S_SRT_ADM T-SH61000200    ACTVT     03                                                                              U  O000049
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000013S_TCODE   T-SH61000300    TCD       /UI2/FEEDBACK_SETUP                                                             S  O000009
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000014S_TCODE   T-SH61000300    TCD       /UI2/INVAL_CACHES                                                               S  O000009
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000015S_TCODE   T-SH61000300    TCD       /UI2/PERS_DEL                                                                   S  O000009
+AGR_1251                                          100ZSAP_UI2_USER_700             000007S_TCODE   T-SH61000400    TCD       /UI2/FLP                                                                        S  O000009
+AGR_1251                                          100Z_RT_ADMIN                    000050S_TCODE   T-SH61000200    TCD       /IWFND/APPS_LOG                                                                 U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000051S_TCODE   T-SH61000200    TCD       /IWFND/BGRFC_CHECK                                                              U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000052S_TCODE   T-SH61000200    TCD       /IWFND/BULK_USER_MAP                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000053S_TCODE   T-SH61000200    TCD       /IWFND/CACHE_CLEANUP                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000054S_TCODE   T-SH61000200    TCD       /IWFND/CHECK_ALIASES                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000055S_TCODE   T-SH61000200    TCD       /IWFND/CHECK_GSDOS                                                              U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000056S_TCODE   T-SH61000200    TCD       /IWFND/CLEANUP                                                                  U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000057S_TCODE   T-SH61000200    TCD       /IWFND/CLEANUP_JOBS                                                             U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000058S_TCODE   T-SH61000200    TCD       /IWFND/ERROR_LOG                                                                U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000059S_TCODE   T-SH61000200    TCD       /IWFND/ERROR_LOG_E2E                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000060S_TCODE   T-SH61000200    TCD       /IWFND/EXPLORER                                                                 U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000061S_TCODE   T-SH61000200    TCD       /IWFND/GW_CLIENT                                                                U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000062S_TCODE   T-SH61000200    TCD       /IWFND/IWF_ACTIVATE                                                             U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000063S_TCODE   T-SH61000200    TCD       /IWFND/MAINT_SERVICE                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000064S_TCODE   T-SH61000200    TCD       /IWFND/NOTIF_MONITOR                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000065S_TCODE   T-SH61000200    TCD       /IWFND/REG_SERVICE                                                              U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000066S_TCODE   T-SH61000200    TCD       /IWFND/RL_SYNC_PROCS                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000067S_TCODE   T-SH61000200    TCD       /IWFND/TRACES                                                                   U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000068S_TCODE   T-SH61000200    TCD       /IWFND/VIEW_LOG                                                                 U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000069S_TCODE   T-SH61000200    TCD       /IWFND/WSS_SETUP                                                                U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000070S_TCODE   T-SH61000200    TCD       FILE                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000071S_TCODE   T-SH61000200    TCD       RZ20                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000072S_TCODE   T-SH61000200    TCD       RZ21                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000073S_TCODE   T-SH61000200    TCD       RZ70                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000074S_TCODE   T-SH61000200    TCD       SAML2                                                                           U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000075S_TCODE   T-SH61000200    TCD       SBGRFCCONF                                                                      U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000076S_TCODE   T-SH61000200    TCD       SBGRFCMON                                                                       U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000077S_TCODE   T-SH61000200    TCD       SCOT                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000078S_TCODE   T-SH61000200    TCD       SICF                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000079S_TCODE   T-SH61000200    TCD       SIMGH                                                                           U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000080S_TCODE   T-SH61000200    TCD       SLG1                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000081S_TCODE   T-SH61000200    TCD       SM30                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000082S_TCODE   T-SH61000200    TCD       SM34                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000083S_TCODE   T-SH61000200    TCD       SM36                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000084S_TCODE   T-SH61000200    TCD       SM37                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000085S_TCODE   T-SH61000200    TCD       SM59                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000086S_TCODE   T-SH61000200    TCD       SOAMANAGER                                                                      U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000087S_TCODE   T-SH61000200    TCD       SPRO                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000088S_TCODE   T-SH61000200    TCD       SSO2                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000089S_TCODE   T-SH61000200    TCD       STRUST                                                                          U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000090S_TCODE   T-SH61000200    TCD       SU01                                                                            U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000091S_TCODE   T-SH61000200    TCD       WSIDPADMIN                                                                      U  O000026
+AGR_1251                                          100Z_RT_ADMIN                    000027S_RFC     T-SH61000200    RFC_NAME  /IWFND/SUP_ANALYZE_LOGS                                                         U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000028S_RFC     T-SH61000200    RFC_NAME  /IWTNG/*                                                                        U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000029S_RFC     T-SH61000200    RFC_NAME  /OSP/BW_REPORT                                                                  U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000030S_RFC     T-SH61000200    RFC_NAME  /OSP/GLOBAL_DEFINITIONS                                                         U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000031S_RFC     T-SH61000200    RFC_NAME  /OSP/MUSE_REPORTS                                                               U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000032S_RFC     T-SH61000200    RFC_NAME  /OSP/RAUI_SERVICES                                                              U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000033S_RFC     T-SH61000200    RFC_NAME  /OSP/UTILITIES                                                                  U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000034S_RFC     T-SH61000200    RFC_NAME  OSP/R3_REPORT                                                                   U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000035S_RFC     T-SH61000200    RFC_NAME  SOI1                                                                            U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000036S_RFC     T-SH61000200    RFC_NAME  SWRC                                                                            U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000037S_RFC     T-SH61000200    RFC_NAME  SWRR                                                                            U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000038S_RFC     T-SH61000200    RFC_NAME  SWRW                                                                            U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000039S_RFC     T-SH61000200    RFC_NAME  S_OSP_WF_PATTERN_RUNTIME                                                        U  O000022
+AGR_1251                                          100Z_RT_ADMIN                    000040S_RFC     T-SH61000200    RFC_TYPE  FUGR                                                                            U  O000023
+AGR_1251                                          100Z_RT_ADMIN                    000018S_DATASET T-SH61000200    FILENAME  *                                                                               U  O000042
+AGR_1251                                          100Z_RT_ADMIN                    000019S_DATASET T-SH61000200    PROGRAM   *                                                                               U  O000043
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000001S_SERVICE T-SH61000300    SRV_NAME  4CC78858CF7211088AB530E1E00F95                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000002S_SERVICE T-SH61000300    SRV_NAME  63757DB3D289438D4F221C21333513                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000003S_SERVICE T-SH61000300    SRV_NAME  68BCEF2F18032EF4A2A13B7A167B19                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000004S_SERVICE T-SH61000300    SRV_NAME  76629B7E5D90521CBF90E92F940269                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000005S_SERVICE T-SH61000300    SRV_NAME  7A04C0C5201AFA1BE97E565334CBBC                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000006S_SERVICE T-SH61000300    SRV_NAME  9B40D14C58F2704B0F27610BBD0CCB                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000007S_SERVICE T-SH61000300    SRV_NAME  A15F5E180FD9799CFEFC51020A28B1                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000008S_SERVICE T-SH61000300    SRV_NAME  DE0699A8407F658831D946F2C25B64                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000009S_SERVICE T-SH61000300    SRV_NAME  E50E80F6434D75CA9AE9D099FA6CA8                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000010S_SERVICE T-SH61000300    SRV_NAME  EE69542FFA82E39B82BF35BE97BFEC                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000011S_SERVICE T-SH61000300    SRV_NAME  F152FCADD4CE0D963FB5B99ECB2A3A                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_ADMIN_700            000012S_SERVICE T-SH61000300    SRV_TYPE  HT                                                                              S  O000006
+AGR_1251                                          100ZSAP_UI2_USER_700             000001S_SERVICE T-SH61000400    SRV_NAME  4CC78858CF7211088AB530E1E00F95                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000002S_SERVICE T-SH61000400    SRV_NAME  63757DB3D289438D4F221C21333513                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000003S_SERVICE T-SH61000400    SRV_NAME  A15F5E180FD9799CFEFC51020A28B1                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000004S_SERVICE T-SH61000400    SRV_NAME  DE0699A8407F658831D946F2C25B64                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000005S_SERVICE T-SH61000400    SRV_NAME  E50E80F6434D75CA9AE9D099FA6CA8                                                  S  O000005
+AGR_1251                                          100ZSAP_UI2_USER_700             000006S_SERVICE T-SH61000400    SRV_TYPE  HT                                                                              S  O000006
+AGR_1251                                          100Z_RT_ADMIN                    000048S_TABU_DIST-SH61000200    DICBERCLS IWAD                                                                            U  O000054
+AGR_1251                                          100Z_RT_ADMIN                    000049S_TABU_DIST-SH61000200    DICBERCLS SCUS                                                                            U  O000054
+AGR_1251                                          100Z_RT_ADMIN                    000097S_TRANSPRTT-SH61000200    TTYPE     DTRA                                                                            U  O000059
+AGR_1251                                          100Z_RT_ADMIN                    000001S_ADMI_FCDT-SH61000200    S_ADMI_FCDICFA                                                                            U  O000030
+AGR_1251                                          100Z_RT_ADMIN                    000002S_ADMI_FCDT-SH61000200    S_ADMI_FCDNADM                                                                            U  O000030
+AGR_1251                                          100Z_RT_ADMIN                    000003S_ADMI_FCDT-SH61000200    S_ADMI_FCDPADM                                                                            U  O000030
+AGR_1251                                          100ZSAP_UI2_USER_700             000009S_RFCACL  T-SH61000400    RFC_CLIENT*                                                                               U  O000013
+AGR_1251                                          100ZSAP_UI2_USER_700             000010S_RFCACL  T-SH61000400    RFC_EQUSER*                                                                               U  O000014
+AGR_1251                                          100ZSAP_UI2_USER_700             000011S_RFCACL  T-SH61000400    RFC_INFO  *                                                                               U  O000015
+AGR_1251                                          100ZSAP_UI2_USER_700             000012S_RFCACL  T-SH61000400    RFC_SYSID *                                                                               U  O000016
+AGR_1251                                          100ZSAP_UI2_USER_700             000013S_RFCACL  T-SH61000400    RFC_TCODE *                                                                               U  O000017
+AGR_1251                                          100ZSAP_UI2_USER_700             000014S_RFCACL  T-SH61000400    RFC_USER  *                                                                               U  O000018
+AGR_1251                                          100Z_RT_ADMIN                    000011S_CTS_ADMIT-SH61000200    CTS_ADMFCTINIT                                                                            U  O000033
+AGR_1251                                          100Z_RT_ADMIN                    000008S_BGRFC   T-SH61000200    BGRFC_D_IN*                                                                               U  O000006
+AGR_1251                                          100Z_RT_ADMIN                    000024S_ICF_ADM T-SH61000200    ICF_NODE  *                                                                               U  O000017
+AGR_1251                                          100Z_RT_ADMIN                    000025S_ICF_ADM T-SH61000200    ICF_TYPE  NODE                                                                            U  O000018
+AGR_1251                                          100Z_RT_ADMIN                    000023S_ICF_ADM T-SH61000200    ICF_HOST  DEFAULT_HOST                                                                    U  O000016
+AGR_1251                                          100Z_RT_ADMIN                    000020S_ICF     T-SH61000200    ICF_FIELD PROXY                                                                           U  O000011
+AGR_1251                                          100Z_RT_ADMIN                    000021S_ICF     T-SH61000200    ICF_VALUE CHECK                                                                           U  O000012
+AGR_1251                                          100Z_RT_ADMIN                    000009S_BGRFC   T-SH61000200    BGRFC_D_OU*                                                                               U  O000007
+AGR_1251                                          100Z_RT_ADMIN                    000014S_CTS_SADMT-SH61000200    DOMAIN    *                                                                               U  O000038
+AGR_1251                                          100Z_RT_ADMIN                    000010S_BGRFC   T-SH61000200    BGRFC_TYPE01                                                                              U  O000008
+AGR_1251                                          100Z_RT_ADMIN                    000012S_CTS_SADMT-SH61000200    CTS_ADMFCTTABL                                                                            U  O000036
+AGR_1251                                          100Z_RT_ADMIN                    000013S_CTS_SADMT-SH61000200    DESTSYS   *                                                                               U  O000037
+AGR_1251                                          100Z_RT_ADMIN                    000045S_SRT_ADM T-SH61000200    WS_NAME   *                                                                               U  O000050
+AGR_TEXTS                                         100Z_RT_ADMIN                    E00000
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            E00000Administration tasks of UI technologies starting SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             E00000User Role for basic UI2 700 web services
+AGR_TEXTS                                         100Z_RDS_BR                      E00000Business Role
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            D00000Administrationsaufgaben bei UI-Technologien für SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             D00000Benutzerrolle für einfache Web-Services von UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            F00000Tâches d'administration de technologies IU pour SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             F00000Rôle utilisateur pour services Web simples UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            100000# SAP NetWeaver 7.00 # UI #######
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             100000## UI2 700 Web #######
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            P00000Tarefas de administração em tecnologias IU para SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             P00000Função do usuário para Web Services simples de UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            J00000SAP NetWeaver 7.00 ### UI ###########
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             J00000## UI2 700 Web ###########
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            R00000################ ###### ########## UI ### SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             R00000#### ############ ### ####### ###-######## UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            S00000Tareas de administración en tecnologías IU para SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             S00000Rol de usuario para servicios web simples de UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            I00000Tasks amministratore con tecnologie UI per SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             I00000Ruolo utente per Web Service semplici di UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            C00000Administra#ní úlohy u technologií UI pro SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             C00000Role uživatele pro základní webové služby UI 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            N00000Beheerderrol bij UI-technologieën voor SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             N00000Gebruikersrol eenvoudige webservices van UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            H00000Adminisztrátori feladatok UI-technológiáknál SAP NetWeaver 7.00-hoz
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             H00000Felhasználószerep UI2 700 egyszer# webszolgáltatásaihoz
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            T00000SAP NetWeaver 7.00 için UI teknolojileri yönetim görevleri
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             T00000UI2 700 basit web servisi için kullan#c# rolü
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            B00000###### ##### ## ########## #### ##### ### #-SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             B00000##### ##### #### UI2 700 Web Services #####
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            L00000Zadania administratora w przypadku technologii IU dla SAP Netweaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             L00000Rola u#ytkownika dla prostych us#ug Web Service UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            300000SAP NetWeaver 7.00# #### UI ### ## ###
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             300000## UI2 700 # #### ## ### ##
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             Q00000Rola užívate#a pre jednoduché webové služby UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            Q00000Úlohy administrátora pri technológiách UI pre SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            K00000Administratoropgaver ved UI-teknologier for SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             K00000Brugerrolle for enkelte webservices for UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            O00000Administrasjonsoppgaver ved UI-teknologier for SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             O00000Brukerrolle for enkle webtjenester for UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            A00000###### ######## ####### ##### ######## ##### ## SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             A00000### ######## ###### ##### UI2 700 ########
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            M00000## SAP NetWeaver 7.00 ##############
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             M00000## UI2 700 Web ########
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            U00000Pääkäyttäjän tehtävät UI-teknologioissa SAP NetWeaver 7.00:aa varten
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             U00000Käyttäjärooli UI2 700:n yksinkertaisia WWW-palveluita varten
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            400000Sarcini administrare pt.tehnologii UI lanseaz# SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             400000Rol utilizator pt.servicii Web UI2 700 de baz#
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            V00000Administrationsuppgifter för UI-teknologier för SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             V00000Användarroll för enkla webbtjänster för UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            200000####################### UI ############# SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             200000################# UI2 700 Web Service #######
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            c00000Tasques d'administració en tecnologies d'IU per a SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             c00000Rol d'usuari per a serveis Web simples de IU2 700
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             600000Korisni#ka uloga za osnovne UI2 700 web usluge
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            600000Administrativni zadaci tehnologija UI po#evši od SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            G00000######## ########### ########### UI ### ######## ## SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             G00000##### ###### ### ###### UI2 700 ############ #########
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             500000Uporabniška vloga za enostavne spletne storitve UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            500000Administrativne naloge pri UV-tehnologijah za SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            d00000Administrativni zadaci tehnologija korisn.interfejsa po#ev od SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             d00000Uloga korisnika za osnovne UI2 700 web usluge
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            800000######## ############### ########.######.########., ## #####.SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             800000#### ########### ### ####### ###-######## UI2 700
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            W00000############### ###### ## UI ##########, ########## SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             W00000############# #### ## UI2 700 ### ######
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            #00000SAP NetWeaver 7.00 #### #### ## ### UI ######### ## ########## #####
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             #00000###### UI2 700 ### ###### ## ### ########## ######
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            #00000Ta#c vu# qua#n tri# công nghê# UI b##t #â#u SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             #00000Vai trò ng##i s# d#ng cho d#ch v# web UI2 700 c# s#
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            #00000SAP NetWeaver 7.00 #### ####### UI ################# ####### ############
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             #00000####### UI2 700 ### ########## #### ########### ####
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            900000UI tehnoloogiate haldustoimingud alates versioonist SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             900000U12 700 põhiveebiteenuste kasutajaroll
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            X00000UI technologij# administravimo užduotys paleidžiant „SAP NetWeaver 7.00“
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             X00000UI2 700 žiniatinklio tarnyb# vartotojo vaidmuo
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            Y00000UI tehnolo#iju administr#šanas uzdevumi, s#kot ar SAP NetWeaver 7.00
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             Y00000Pamata UI2 700 t#mek#a pakalpojumu lietot#ja loma
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            E00001This role includes administration tasks based on at least the User Interface
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            E00002Add-On for SAP NetWeaver 7.31.
+AGR_TEXTS                                         100ZSAP_UI2_USER_700             E00001General user Role for basic UI2 700 web services.
+AGR_TEXTS                                         100ZSAP_UI2_ADMIN_700            E00003These tasks can include e.g. SAP Gateway services, transactions, etc.
+AGR_FLAGS                                         100Z_RT_ADMIN                    COLL_AGR  BPINST      20151105125901BPINST      20151105125901
+AGR_FLAGS                                         100Z_RT_ADMIN                    DEVCLASS  BPINST      20151105125901BPINST      20151105125901
+AGR_FLAGS                                         100Z_RT_ADMIN                    RESP_USER BPINST      20151105125901BPINST      20151105125901
+AGR_FLAGS                                         100Z_RT_ADMIN                    FORCE_MIX BPINST      20151105130112BPINST      20151105130237
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            RESP_USER BPINST      20151105133818BPINST      20151105133818
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            COLL_AGR  BPINST      20151105133818BPINST      20151105133818
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            SYS_FLAG  BPINST      20151105133819BPINST      20151105133819
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            FORCE_MIX BPINST      20151105134119BPINST      20151105134119
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             RESP_USER BPINST      20151105134147BPINST      20151105134147
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             COLL_AGR  BPINST      20151105134147BPINST      20151105134147
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             SYS_FLAG  BPINST      20151105134147BPINST      20151105134147
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             FORCE_MIX BPINST      20151105134221BPINST      20151116210029
+AGR_FLAGS                                         100Z_RDS_BR                      COLL_AGR  BPINST      20151116214524BPINST      20151116214524
+AGR_FLAGS                                         100Z_RDS_BR                      DEVCLASS  BPINST      20151116214524BPINST      20151116214524
+AGR_FLAGS                                         100Z_RDS_BR                      RESP_USER BPINST      20151116214524BPINST      20151116214524
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            MASTER_LANBPINST      20151105133818BPINST      20151105133818E
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             MASTER_LANBPINST      20151105134147BPINST      20151105134147E
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            DEVCLASS  BPINST      20151105133818BPINST      20151105133818/UI2/IMPLEMENTATION_700
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             DEVCLASS  BPINST      20151105134147BPINST      20151105134147/UI2/IMPLEMENTATION_700
+AGR_FLAGS                                         100ZSAP_UI2_ADMIN_700            SAP_SOURCEBPINST      20151105133818BPINST      20151105133818SAP_UI2_ADMIN_700
+AGR_FLAGS                                         100ZSAP_UI2_USER_700             SAP_SOURCEBPINST      20151105134147BPINST      20151105134147SAP_UI2_USER_700
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000002WOTSERVICE             63757DB3D289438D4F221C21333513HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000003WOTSERVICE             F152FCADD4CE0D963FB5B99ECB2A3AHT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000004WOTSERVICE             9B40D14C58F2704B0F27610BBD0CCBHT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000005WOTSERVICE             DE0699A8407F658831D946F2C25B64HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000006WOTSERVICE             A15F5E180FD9799CFEFC51020A28B1HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000007WOTSERVICE             EE69542FFA82E39B82BF35BE97BFECHT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000009WOTSERVICE             /UI2/PERS_DEL                 TR
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000011WOTSERVICE             68BCEF2F18032EF4A2A13B7A167B19HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000012WOTSERVICE             E50E80F6434D75CA9AE9D099FA6CA8HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000013WOTSERVICE             76629B7E5D90521CBF90E92F940269HT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000014WOTSERVICE             7A04C0C5201AFA1BE97E565334CBBCHT
+AGR_BUFFI                                         100ZSAP_UI2_ADMIN_700            00000015WOTSERVICE             4CC78858CF7211088AB530E1E00F95HT
+AGR_BUFFI                                         100ZSAP_UI2_USER_700             00000002WOTSERVICE             63757DB3D289438D4F221C21333513HT
+AGR_BUFFI                                         100ZSAP_UI2_USER_700             00000005WOTSERVICE             DE0699A8407F658831D946F2C25B64HT
+AGR_BUFFI                                         100ZSAP_UI2_USER_700             00000006WOTSERVICE             A15F5E180FD9799CFEFC51020A28B1HT
+AGR_BUFFI                                         100ZSAP_UI2_USER_700             00000008WOTSERVICE             E50E80F6434D75CA9AE9D099FA6CA8HT
+AGR_BUFFI                                         100ZSAP_UI2_USER_700             00000009WOTSERVICE             4CC78858CF7211088AB530E1E00F95HT
+AGR_BUFFI                                         100Z_RDS_BR                      00000002WX-SAP-UI2-CATALOGPAGE:Z_RDS_BC?DEST_FES=&ROLE_ORIGIN=&AUTH_DEFAULTS=X
+AGR_BUFFI                                         100Z_RDS_BR                      00000004WOTSERVICE             VA01                          TR
+AGR_BUFFI                                         100Z_RDS_BR                      00000005Wsap-ui2-group:Z_RDS_BCG
+AGR_BUFFI                                         100Z_RDS_BR                      00000006WX-SAP-UI2-CATALOGPAGE:ZSAP_TC_FIN_CM_BE_APPS?DEST_FES=&ROLE_ORIGIN=S4HCLNT100&AUTH_DEFAULTS=X
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000200000001 00000100OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000300000001 00000110OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000400000001 00000120OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000500000001 00000130OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000600000001 00000080OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000700000001 00000090OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000800000001 00000060TR/UI2/INVAL_CACHES                               01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000000900000001 00000140OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001000000001 00000070TR/UI2/FEEDBACK_SETUP                             01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001100000001 00000050OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001200000001 00000040OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001300000001 00000030OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001400000001 00000020OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_ADMIN_700            0000001500000001 00000010OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000200000001 00000050OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000500000001 00000060OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000600000001 00000040OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000700000001 00000030TR/UI2/FLP                                        01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000800000001 00000020OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100ZSAP_UI2_USER_700             0000000900000001 00000010OTSERVICE                                         01                                X                                         0000000000
+AGR_HIER                                          100Z_RDS_BR                      0000000200000001X00000020OTCAT_PROVIDER                                    01                                X                                         0000000000
+AGR_HIER                                          100Z_RDS_BR                      0000000400000002 00000010OTSERVICE                                         02                                X                                         0000000000
+AGR_HIER                                          100Z_RDS_BR                      0000000500000001 00000030OTGROUP_PROVIDER                                  01                                X                                         0000000000
+AGR_HIER                                          100Z_RDS_BR                      0000000600000001X00000010OTCAT_PROVIDER                                    01                                X                                         0000000000
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000008UI2 #######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000009#######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            100000010UI2 ########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000008############################# UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000009####################################
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            200000010UI2 - ###############################
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000008UI2 ### ### ###
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000009## ## ### ##
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            300000010UI2 ##: ### ### ###
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000008Invalidare global# pt.cache-uri UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000009Cur##ire serviciu de personalizare
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            400000010Configurare UI2 pt.serviciu feedback utilizator
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000008Globalna razveljavitev UI2-predpomnilnika
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000009#iš#enje storitve personalizacije
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            500000010Nastavitev storitve povratnih informacij uporabnika UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000008Globalno poništenje UI2 cachea
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000009Usluga personalizacije #iš#enja
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            600000010Postavljanje usluge povratnih informacija korisnika UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000008######### ########## ##### UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000009######## ###### ##############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            800000010UI2: ########## ###### ########## ##'#### ###########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000008UI2 vahemälude globaalne annulleerimine
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000009Puhasta isikupärastamisteenus
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            900000010UI2 seadistuskasutajate tagaside teenus
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000008##### ### ###### ####### ###### ## UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000009##### #### #######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            A00000010UI2 - ##### #### ####### ########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000008##### #### ###### ## ###### UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000009### ##### ## ##### #####
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            B00000010##### ##### #### ####### ## UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000008Globální zneplatn#ní mezipam#tí UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000009O#išt#ní služby personalizace
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            C00000010Nastavení UI2 služby zp#tné odezvy uživatele
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000008Globale Invalidierung von UI2-Caches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000009Personalisierungsservice bereinigen
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            D00000010UI2-Setup des Benutzer-Feedback-Service
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000008Global Invalidation of UI2 chaches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000009Cleanup Personalisatation Service
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000010UI2 Setup User Feedback Service
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000011R3TR IWSG ZTRANSPORT_0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000012R3TR IWSG ZPAGE_BUILDER_PERS_0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000013R3TR IWSG ZPAGE_BUILDER_CUST_0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000014R3TR IWSG ZPAGE_BUILDER_CONF_0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            E00000015R3TR IWSG ZINTEROP_0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000008Invalidation globale de caches UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000009Nettoyer service de personnalisation
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            F00000010Configuration UI2 du service de feedback de l'utilisateur
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000008######## ######### ### UI2 chaches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000009######## ########### #############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            G00000010UI2 ########### ######### ####### ######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000008UI2-cache-ek globális érvénytelenítése
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000009Testreszabási szolgáltatás tisztázása
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            H00000010Felhasználó-visszajelzési szolgáltatás UI2-setupja
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000008Invalidazione globale di Caches U12
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000009Ripulire servizio di personalizzazione
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            I00000010Configurazione UI2 del servizio di feedback utente
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000008UI2 ##############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000009#######################
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            J00000010UI2 ################
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000008Global invalidering af UI2-caches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000009Ryd op i personaliseringsservice
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            K00000010UI2-setup for brugerfeedbackservice
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000008Globalne uniewa#nienie cache UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000009Usuwanie b##dów us#ugi personalizacji
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            L00000010Konfiguracja UI2 us#ugi informacji zwrotnej u#ytkownika
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000008UI2 #######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000009#######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            M00000010UI2 #########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000008Globale invalidatie van UI2-caches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000009Personaliseringsservice opschonen
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            N00000010UI2-configuratie van gebruikersfeedbackservice
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000008Global invalidering av UI2-cacher
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000009Rydd persontilpasningstjeneste
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            O00000010UI2-oppsett for brukertilbakemeldingstjeneste
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000008Invalidação global de caches UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000009Depurar serviço de personalização
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            P00000010Configuração UI2 do serviço de feedback de usuário
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000008Globálne zrušenie platnosti vyrovnávacích pamätí UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000009O#isti# službu personalizácie
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Q00000010Nastavenie UI2 služby feedbacku užívate#a
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000008########## ########### #### UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000009######## ###### ##############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            R00000010######### UI2 ####### ######## ##### ############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000008Invalidación global de caché UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000009Depurar servicio de personalización
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            S00000010Configuración UI2 del servicio feedback de usuario
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000008UI2 önbelleklerini genel geçersiz k#lma
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000009Ki#iselle#tirme servisini temizle
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            T00000010Kullan#c# geribildirim servisi için UI2 kurulumu
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000008UI2-välimuistin globaali mitätöinti
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000009Puhdista yksilöllistämispalvelu
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            U00000010Käyttäjäpalautepalvelun UI2-asetus
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000008Global invalidering av UI2-cache
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000009Rensa personanpassningstjänst
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            V00000010UI2-installation för användarfeedback-service
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000008######## ######### ## UI2 chaches
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000009########## ## ######## ## ##############
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            W00000010UI2 ######### ## ###### ## ####### ###### ## ##########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000008Visuotinis UI2 talpykl# anuliavimas
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000009Valymo personalizavimo paslauga
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            X00000010UI2 nustatymo vartotojo gr#žtamojo ryšio paslauga
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000008UI2 kešatmi#u glob#la anul#šana
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000009Not#r#t personaliz#cijas pakalpojumu
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            Y00000010UI2 iestat#šanas lietot#ja atgriezenisk#s saites pakalpojums
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000008Invalidació global de memòries clau IU2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000009Depurar servei de personalització
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            c00000010Configuració UI2 del servei de valoració d'usuari
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000008Globalno poništavanje validnosti UI2 skrivenih memorija
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000009Po#isti uslugu personalizacije
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            d00000010UI2 postavi uslugu povratnih informacija korisnika
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000008UI2 #### ## ####### ##########
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000009####### #### ## ####### ####
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000010UI2 ##### ########## ####### ####
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000008UI2 ####### ######## ######## ######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000009######### ######## #######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000010UI2 ############## #### ######## ######## ######
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000003R3TR IWSV /UI2/PAGE_BUILDER_CONF             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000004R3TR IWSV /UI2/PAGE_BUILDER_CUST             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000007R3TR IWSV /UI2/TRANSPORT                     0001
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000008Mâ#t hiê#u l##c toa#n cu#c cu#a vu#ng nh## #ê#m UI2
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000009Do#n de#p di#ch vu# ca# nhân ho#a
+AGR_HIERT                                         100ZSAP_UI2_ADMIN_700            #00000010Di#ch vu# pha#n hô#i cu#a ng###i du#ng thiê#t lâ#p UI2
+AGR_HIERT                                         100ZSAP_UI2_USER_700             100000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             100000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             100000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             100000007SAP Fiori #####
+AGR_HIERT                                         100ZSAP_UI2_USER_700             200000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             200000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             200000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             200000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             300000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             300000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             300000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             300000007SAP Fiori LaunchPad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             400000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             400000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             400000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             400000007Launchpad SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             500000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             500000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             500000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             500000007Launchpad SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             600000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             600000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             600000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             600000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             800000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             800000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             800000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             800000007###### ####### SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             900000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             900000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             900000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             900000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             A00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             A00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             A00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             A00000007#### ##### SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             B00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             B00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             B00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             B00000007### ##### ## SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             C00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             C00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             C00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             C00000007Launchpad SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             D00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             D00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             D00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             D00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000008R3TR IWSG ZPAGE_BUILDER_PERS_0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             E00000009R3TR IWSG ZINTEROP_0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             F00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             F00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             F00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             F00000007Barre de lancement SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             G00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             G00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             G00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             G00000007##.######### SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             H00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             H00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             H00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             H00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             I00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             I00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             I00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             I00000007SAP Fiori launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             J00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             J00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             J00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             J00000007SAP Fiori #######
+AGR_HIERT                                         100ZSAP_UI2_USER_700             K00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             K00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             K00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             K00000007SAP Fiori-launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             L00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             L00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             L00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             L00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             M00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             M00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS
+AGR_HIERT                                         100ZSAP_UI2_USER_700             M00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             M00000007SAP Fiori ###
+AGR_HIERT                                         100ZSAP_UI2_USER_700             N00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             N00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             N00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             N00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             O00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             O00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             O00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             O00000007SAP Fiori-startfelt
+AGR_HIERT                                         100ZSAP_UI2_USER_700             P00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             P00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             P00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             P00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Q00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Q00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Q00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Q00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             R00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             R00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             R00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             R00000007###### ####### SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             S00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             S00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             S00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             S00000007Rampa de lanzamiento SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             T00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             T00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             T00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             T00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             U00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             U00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             U00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             U00000007SAP Fiori -aloituspaneeli
+AGR_HIERT                                         100ZSAP_UI2_USER_700             V00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             V00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             V00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             V00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             W00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             W00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             W00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             W00000007######### ##### SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             X00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             X00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             X00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             X00000007„SAP Fiori“ paleidimo skydelis
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Y00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Y00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Y00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             Y00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             c00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             c00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             c00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             c00000007Plataforma llançam.SAP Fiori
+AGR_HIERT                                         100ZSAP_UI2_USER_700             d00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             d00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             d00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             d00000007SAP Fiori Launchpad
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000007SAP Fiori ########
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000007SAP Fiori #### #### ######
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000002R3TR IWSV /UI2/LAUNCHPAD                     0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000005R3TR IWSV /UI2/PAGE_BUILDER_PERS             0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000006R3TR IWSV /UI2/INTEROP                       0001
+AGR_HIERT                                         100ZSAP_UI2_USER_700             #00000007SAP Fiori Launchpad
+AGR_HIERT                                         100Z_RDS_BR                      E00000002Z_RDS_BC
+AGR_HIERT                                         100Z_RDS_BR                      E00000004Create Sales Order
+AGR_HIERT                                         100Z_RDS_BR                      E00000005Z_RDS_BCG
+AGR_HIERT                                         100Z_RDS_BR                      E00000006ZSAP_TC_FIN_CM_BE_APPS:S4FIN
+AGR_TIME                                          100ZSAP_UI2_ADMIN_700            MENU      BPINST      20151105133818000000000000000BPINST      20151105134115000000000000000
+AGR_TIME                                          100ZSAP_UI2_ADMIN_700            PROFILE   BPINST      20151105134119000000000000000BPINST      20151105134119000000000000000
+AGR_TIME                                          100ZSAP_UI2_USER_700             MENU      BPINST      20151105134147000000000000000BPINST      20151105134220000000000000000
+AGR_TIME                                          100ZSAP_UI2_USER_700             PROFILE   BPINST      20151105134221000000000000000BPINST      20151116210029000000000000000
+AGR_TIME                                          100Z_RDS_BR                      MENU      BPINST      20151116214612000000000000000BPINST      20151116214612000000000000000
+AGR_TIME                                          100Z_RT_ADMIN                    PROFILE   BPINST      20151105130112000000000000000BPINST      20151105130237000000000000000
+AGR_LSD                                           100ZSAP_UI2_ADMIN_700            /UI2/IMPLEMENTATION_700       E
+AGR_LSD                                           100ZSAP_UI2_USER_700             /UI2/IMPLEMENTATION_700       E
+AGR_LSD                                           100Z_RDS_BR
+AGR_LSD                                           100Z_RT_ADMIN
