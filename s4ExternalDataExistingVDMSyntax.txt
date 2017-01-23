@@ -48,3 +48,32 @@ select from ZX##_I_Airport {
     ZX##_I_Airport.AirportName,
     ZX##_I_Airport.AirportTimeZone
 } 
+
+
+************************
+**
+**  airport geo and service view
+**
+************************
+
+name: ZX##_IAIRPORTGEO
+
+desc: Airport geo and service, private view, VDM interface view
+
+@AbapCatalog.sqlViewName: 'ZX##_IAIRPORTGEO'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airport geo and service'
+@Analytics.dataCategory: #DIMENSION 
+@VDM.viewType: #BASIC
+@ObjectModel.representativeKey: 'airportcode'
+
+define view ZX##_I_AirportGeo as select from zv##_airprtserv {
+    key zv##_airprtserv.airportcode, 
+    @Semantics.geoLocation.latitude: true
+    zv##_airprtserv.airportlat, 
+    @Semantics.geoLocation.longitude: true
+    zv##_airprtserv.airportlon, 
+    @Semantics.url: true
+    zv##_airprtserv.airportservice
+}
+
