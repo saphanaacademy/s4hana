@@ -77,3 +77,29 @@ define view ZX##_I_AirportGeo as select from zv##_airprtserv {
     zv##_airprtserv.airportservice
 }
 
+
+**************************************************************
+*
+*   extend airport query view
+*
+**************************************************************
+
+name:	ZX##_E_AirportQGS
+
+descr:	Airport, geo and service, VDM extend view
+
+* your final syntax is going to look something like this later: 
+
+@AbapCatalog.sqlViewAppendName: 'ZX##_EAIRPORTQGS'
+@EndUserText.label: 'Airport, geo and service, VDM extend view'
+extend view ZX##_C_AirportQuery with ZX##_E_AirportQGS
+association to ZX##_I_AirportGeoServ as _AirportGS
+    on $projection.acx  = _AirportGS.airportcode
+{
+    ZX##_I_Airport.airport as acx,
+    _AirportGS.airportcode, 
+    _AirportGS.airportlat, 
+    _AirportGS.airportlon, 
+    _AirportGS.airportservice
+}
+
