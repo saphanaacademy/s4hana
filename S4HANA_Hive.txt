@@ -97,7 +97,7 @@ http://repo.hortonworks.com/content/repositories/releases/org/apache/hive/hive-j
 
 DROP REMOTE SOURCE "Hadoop" CASCADE;
 
-CREATE REMOTE SOURCE "Hadoop" ADAPTER "HiveAdapter" AT LOCATION AGENT "SDI_AGENT"
+CREATE REMOTE SOURCE "Hadoop" ADAPTER "HiveAdapter" AT LOCATION AGENT "Agent"
 CONFIGURATION
 '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ConnectionProperties name="configurations">
