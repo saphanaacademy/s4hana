@@ -127,7 +127,8 @@ data / csv file is available from here:
 https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0
 
 c:\usr\sap\dataprovagent\agentutil
-createfileformat.bat -file c:\_DoNotDelete\Airportwebservices_FF.csv -cfgdir c:\_DoNotDelete\
+
+createfileformat.bat -file d:\_FileFormat\Airportwebservices.csv -cfgdir d:\_FileFormat\
 
 DROP REMOTE SOURCE "File" CASCADE;
 
