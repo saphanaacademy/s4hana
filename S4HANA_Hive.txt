@@ -126,6 +126,9 @@ http://scn.sap.com/community/developer-center/hana/blog/2016/01/06/hana-smart-da
 data / csv file is available from here:
 https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0
 
+add header:
+airportcode,airportname,airportstate,airportcity,airportlat,airportlon,airportservice
+
 c:\usr\sap\dataprovagent\agentutil
 
 createfileformat.bat -file d:\_FileFormat\Airportwebservices.csv -cfgdir d:\_FileFormat\
