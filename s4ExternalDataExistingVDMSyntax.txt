@@ -1,6 +1,15 @@
 ************************
 **
-**  airport view
+**  HANA calc view AIRPORTCODE formula
+**
+************************
+
+if(isnull("airportcode"),'N',"airportcode")
+
+
+************************
+**
+**  ABAP CDS airport view
 **
 ************************
 
@@ -28,7 +37,7 @@ select from sairport {
 
 ************************
 **
-**  airport query view
+**  ABAP CDS airport query view
 **
 ************************
 
@@ -52,7 +61,7 @@ select from ZX##_I_Airport {
 
 ************************
 **
-**  airport geo and service view
+**  ABAP CDS airport geo and service view
 **
 ************************
 
@@ -80,7 +89,7 @@ define view ZX##_I_AirportGeo as select from zv##_airprtserv {
 
 **************************************************************
 *
-*   extend airport query view
+*   ABAP CDS extend airport query view
 *
 **************************************************************
 
