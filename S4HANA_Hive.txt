@@ -133,6 +133,29 @@ cd C:\usr\sap\dataprovagent\agentutils
 
 createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
 
+*** if your cfg file does not look like the following paste this into your cfg file ***
+if your cfg file does not look similar to this then you may get an error creating the virtual table.
+
+FORMAT=CSV
+FORCE_FILENAME_PATTERN=AirportWebservices.csv
+LOCALE=en_US
+COLUMN_DELIMITER=,
+ROW_DELIMITER=
+
+TEXT_QUOTES="
+TEXT_QUOTES_ESCAPE_CHAR="
+ESCAPE_CHAR=\
+ERROR_ON_COLUMNCOUNT=false
+QUOTED_TEXT_CONTAIN_ROW_DELIMITER=true
+SKIP_HEADER_LINES=1
+COLUMN=airportcode;VARCHAR(2048)
+COLUMN=airportname;VARCHAR(2048)
+COLUMN=airportstate;VARCHAR(2048)
+COLUMN=airportcity;VARCHAR(2048)
+COLUMN=airportlat;REAL
+COLUMN=airportlon;REAL
+COLUMN=airportservice;VARCHAR(2048)
+
 DROP REMOTE SOURCE "File" CASCADE;
 
 CREATE REMOTE SOURCE "File" 
