@@ -66,6 +66,7 @@ select * from s4sha.airportwebservices;
 You can the DP Agent from ;
 - SAP Service Market Place (https://support.sap.com/home.html). You will need to log in with your SAP Cloud Identity #, or
 - https://tools.hana.ondemand.com/. Go to the "HCI" tab. Only for dev/testing purposes.
+We used DP Agent 1.3.8.
 
 *************************
 * SHAUSER User Creation *
@@ -98,6 +99,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA SHAUSER to _SYS_REPO WIT
 *********************
 
 http://repo.hortonworks.com/content/repositories/releases/org/apache/hive/hive-jdbc/
+We used Hive 1.2.1 and so hive-jdbc-1.2.1000.2.4.2.8-3-standalone.jar
 
 ***************************
 * Hive Remote Data Source *
