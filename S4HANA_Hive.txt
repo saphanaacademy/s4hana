@@ -59,6 +59,14 @@ hdfs dfs -chown -R hive:hdfs /apps/hive/warehouse/s4sha.db
 
 select * from s4sha.airportwebservices;
 
+********************
+* DP Agent Install *
+********************
+
+You can the DP Agent from ;
+- SAP Service Market Place (https://support.sap.com/home.html). You will need to log in with your SAP Cloud Identity #, or
+- https://tools.hana.ondemand.com/. Go to the "HCI" tab. Only for dev/testing purposes.
+
 *************************
 * SHAUSER User Creation *
 *************************
