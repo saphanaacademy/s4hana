@@ -76,7 +76,7 @@ desc: Airport geo and service, private view, VDM interface view
 @VDM.viewType: #BASIC
 @ObjectModel.representativeKey: 'airportcode'
 
-define view ZX##_I_AirportGeo as select from zv##_airprtserv {
+define view ZX##_I_AirportGeo as select from zv##_airprt {
     key zv##_airprtserv.airportcode, 
     @Semantics.geoLocation.latitude: true
     zv##_airprtserv.airportlat, 
