@@ -9,6 +9,30 @@ if(isnull("airportcode"),'N',"airportcode")
 
 ************************
 **
+**  New User, Project, Sample Data Info
+**
+************************
+
+Roles for New Development User
+		SAP_BR_ANALYTICS_SPECIALIST
+	SAP_BR_BUYER
+	SAP_BR_EMPLOYEE 
+	SAP_UI2_ADMIN 
+	z_r* (on a 1610 system choose z_rds_role)
+
+System Info
+	sid	S4H
+	intance	00
+	client	100
+	name 	vhcals4hci 
+	from C:\Windows\System32\drivers\etc\hosts file
+
+Application to Generate Sample Data
+	SE38 > SAPBC_DATA_GENERATOR 
+
+
+************************
+**
 **  ABAP CDS airport view
 **
 ************************
