@@ -148,34 +148,34 @@ Launchpad URL
 
 Changes to I_AirportGeo
 
-@AbapCatalog.sqlViewName: 'ZXSH_IAIRPORTGEO'
+@AbapCatalog.sqlViewName: 'ZX##_IAIRPORTGEO'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Airport geo and service'
 @Analytics.dataCategory: #DIMENSION 
 @VDM.viewType: #BASIC
 @ObjectModel.representativeKey: 'airportcode'
 
-define view ZXSH_I_AirportGeo as select from zvsh_airprtserv {
-    key zvsh_airprtserv.airportcode, 
+define view ZX##_I_AirportGeo as select from zv##_airprtserv {
+    key zv##_airprtserv.airportcode, 
     @Semantics.geoLocation.latitude: true
-    zvsh_airprtserv.airportlat, 
+    zv##_airprtserv.airportlat, 
     @Semantics.geoLocation.longitude: true
-    zvsh_airprtserv.airportlon, 
+    zv##_airprtserv.airportlon, 
     @Semantics.url: true
-    zvsh_airprtserv.airportservice,
-    instr(zvsh_airprtserv.airportservice,'/status/?') as service_check
+    zv##_airprtserv.airportservice,
+    instr(zv##_airprtserv.airportservice,'/status/?') as service_check
 }
   
 
 Changes to E_AirportQGS
 
-@AbapCatalog.sqlViewAppendName: 'ZXSH_EAIRPORTQGS'
+@AbapCatalog.sqlViewAppendName: 'ZX##_EAIRPORTQGS'
 @EndUserText.label: 'Airport, geo and service, VDM extend view'
-extend view ZXSH_C_AirportQuery with ZXSH_E_AirportQGS
-association to ZXSH_I_AirportGeo as _AirportGS
+extend view ZX##_C_AirportQuery with ZX##_E_AirportQGS
+association to ZX##_I_AirportGeo as _AirportGS
     on $projection.acx  = _AirportGS.airportcode
 {
-    ZXSH_I_Airport.Airport as acx,
+    ZX##_I_Airport.Airport as acx,
     _AirportGS.airportcode, 
     _AirportGS.airportlat, 
     _AirportGS.airportlon, 
