@@ -121,8 +121,6 @@ name:	ZX##_E_AirportQGS
 
 descr:	Airport, geo and service, VDM extend view
 
-* your final syntax is going to look something like this later: 
-
 @AbapCatalog.sqlViewAppendName: 'ZX##_EAIRPORTQGS'
 @EndUserText.label: 'Airport, geo and service, VDM extend view'
 extend view ZX##_C_AirportQuery with ZX##_E_AirportQGS
@@ -135,4 +133,28 @@ association to ZX##_I_AirportGeo as _AirportGS
     _AirportGS.airportlon, 
     _AirportGS.airportservice
 }
+
+
+************************
+**
+**  OData Test URL's
+**
+************************
+
+https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZXSH_C_AIRPORTQUERY_CDS/ZXSH_C_AirportQuery?$orderby=has_service%20desc
+
+https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZXSH_C_AIRPORTQUERY_CDS/ZXSH_C_AirportQuery?$orderby=has_service%20desc&$select=has_service,AirportTimeZone
+  
+
+************************
+**
+**  Launchpad & Launchpad Designer URL's
+**
+************************
+
+Launchpad
+	https://vhcals4hci.dummy.nodomain:44301/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html
+
+Launchpad Designer
+	https://vhcals4hci.dummy.nodomain:44301/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=100
 
