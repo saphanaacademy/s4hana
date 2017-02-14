@@ -14,7 +14,7 @@ if(isnull("airportcode"),'N',"airportcode")
 ************************
 
 Roles for New Development User
-		SAP_BR_ANALYTICS_SPECIALIST
+	SAP_BR_ANALYTICS_SPECIALIST
 	SAP_BR_BUYER
 	SAP_BR_EMPLOYEE 
 	SAP_UI2_ADMIN 
