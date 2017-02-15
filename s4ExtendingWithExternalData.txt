@@ -19,6 +19,9 @@ Roles for New Development User
 	SAP_BR_EMPLOYEE 
 	SAP_UI2_ADMIN 
 	z_r* (on a 1610 system choose z_rds_role)
+	
+Profiles for New Development User
+	sap_all and sap_new
 
 System Info
 	sid	S4H
