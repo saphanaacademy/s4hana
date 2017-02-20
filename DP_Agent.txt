@@ -1,0 +1,8 @@
+https://tools.hana.ondemand.com/#hci
+
+ALTER SYSTEM ALTER CONFIGURATION ('daemon.ini', 'host', 'vhcalhdbdb') 
+SET ('dpserver','instances') = '1' WITH RECONFIGURE;
+
+GRANT CREATE REMOTE SOURCE TO SYSTEM;
+GRANT ADAPTER ADMIN TO SYSTEM;
+GRANT AGENT ADMIN TO SYSTEM;
