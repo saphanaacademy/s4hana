@@ -21,44 +21,6 @@
 #
 ************************
 
-****************
-* Dropbox Link *
-****************
-
-# for Hive Data
-wget https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0 -O AirportWebServices.dat
-# for File Formats Data
-wget https://www.dropbox.com/s/w5kgc7nfga59ja8/AirportWebServices_FF.csv?dl=0
-AirportWebServices.csv 
-
-**********************
-* HDFS/Hive Commands *
-**********************
-
-hdfs dfs -ls /apps/hive/warehouse/s4sha.db/
-hdfs dfs -mkdir /apps/hive/warehouse/s4sha.db/
-# hdfs dfs -rm -r /apps/hive/warehouse/s4sha.db/airportwebservices
-
-DROP TABLE s4sha.airportwebservices;
-
-CREATE DATABASE s4sha;
-
-CREATE TABLE IF NOT EXISTS s4sha.airportwebservices (
-airportcode                     char(3),
-airportname                     varchar(100),
-airportstate                    varchar(100),
-airportcity                     varchar(100),
-airportlat                      double,
-airportlon                      double,
-airportservice                  varchar(100) 
-) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;
-
-hdfs dfs -put AirportWebServices.dat /apps/hive/warehouse/s4sha.db/airportwebservices
-hdfs dfs -ls /apps/hive/warehouse/s4sha.db/airportwebservices
-hdfs dfs -chown -R hive:hdfs /apps/hive/warehouse/s4sha.db
-
-select * from s4sha.airportwebservices;
-
 ********************
 * DP Agent Install *
 ********************
@@ -100,6 +62,44 @@ GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA SHAUSER to _SYS_REPO WIT
 # DELETE FROM _SYS_REPO.PACKAGE_CATALOG WHERE RESPONSIBLE = 'SHAUSER';
 # SELECT TOP 1000 * FROM "_SYS_REPO"."PACKAGE_CATALOG" WHERE PACKAGE_ID = 'SHAUSER';
 # DROP USER SHAUSER CASCADE;
+
+****************
+* Dropbox Link *
+****************
+
+# for Hive Data
+wget https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0 -O AirportWebServices.dat
+# for File Formats Data
+wget https://www.dropbox.com/s/w5kgc7nfga59ja8/AirportWebServices_FF.csv?dl=0
+AirportWebServices.csv 
+
+**********************
+* HDFS/Hive Commands *
+**********************
+
+hdfs dfs -ls /apps/hive/warehouse/s4sha.db/
+hdfs dfs -mkdir /apps/hive/warehouse/s4sha.db/
+# hdfs dfs -rm -r /apps/hive/warehouse/s4sha.db/airportwebservices
+
+DROP TABLE s4sha.airportwebservices;
+
+CREATE DATABASE s4sha;
+
+CREATE TABLE IF NOT EXISTS s4sha.airportwebservices (
+airportcode                     char(3),
+airportname                     varchar(100),
+airportstate                    varchar(100),
+airportcity                     varchar(100),
+airportlat                      double,
+airportlon                      double,
+airportservice                  varchar(100) 
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;
+
+hdfs dfs -put AirportWebServices.dat /apps/hive/warehouse/s4sha.db/airportwebservices
+hdfs dfs -ls /apps/hive/warehouse/s4sha.db/airportwebservices
+hdfs dfs -chown -R hive:hdfs /apps/hive/warehouse/s4sha.db
+
+select * from s4sha.airportwebservices;
 
 *********************
 * URL to Hive JDBCs *
