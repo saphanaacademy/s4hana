@@ -4,7 +4,6 @@
 
 $$ This file is specifically for the S/4 HANA Extending Data Virtual Lab, and NOT for the S/4 HANA Extending Data Video Series $$
 
-
 ********************
 * DP Agent Install *
 ********************
@@ -50,6 +49,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA SHAUSER to _SYS_REPO WIT
 ****************************
 
 # Log into Putty as the User/Password (user??) you were sent during registration (no PPK/PEM needed).
+# You may want to copy the text below into notepad, and find/replace "user??" with you user number, ie. "user01", "user02", etc.
 
 wget https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0 -O AirportWebServices.dat
 
