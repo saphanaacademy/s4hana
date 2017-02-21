@@ -107,7 +107,8 @@ We used Hive 1.2.1 and so hive-jdbc-1.2.1000.2.4.2.8-3-standalone.jar
 
 DROP REMOTE SOURCE "Hadoop" CASCADE;
 
-CREATE REMOTE SOURCE "Hadoop" ADAPTER "HiveAdapter" AT LOCATION AGENT "Agent"
+# note the SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
+CREATE REMOTE SOURCE "Hadoop" ADAPTER "HiveAdapter" AT LOCATION AGENT "SDI_AGENT"
 CONFIGURATION
 '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ConnectionProperties name="configurations">
@@ -168,6 +169,7 @@ COLUMN=airportservice;VARCHAR(2048)
 
 DROP REMOTE SOURCE "File" CASCADE;
 
+# note the SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
 CREATE REMOTE SOURCE "File" 
 ADAPTER "FileAdapter" AT LOCATION AGENT "SDI_AGENT"
 CONFIGURATION '<?xml version="1.0" encoding="UTF-8"?>
