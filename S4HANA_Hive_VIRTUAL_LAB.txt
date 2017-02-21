@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% "SAP S/4HANA: Extending with External Data" Virtual Lab %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$ This file is specifically for the S/4 HANA Extending Data Virtual Lab, and NOT for the S/4 HANA Extending Data Video Series $$
+
+
+********************
+* DP Agent Install *
+********************
+
+Get the DP Agent from SAP Development Tools (https://tools.hana.ondemand.com/#hci). 
+Only for dev/testing purposes.
+
+************************
+* DP Server Activation *
+************************
+
+ALTER SYSTEM ALTER CONFIGURATION ('daemon.ini', 'host', 'vhcalhdbdb') 
+SET ('dpserver','instances') = '1' WITH RECONFIGURE;
+
+*************************
+* SHAUSER User Creation *
+*************************
+
+CREATE USER SHAUSER PASSWORD Password1;
+INSERT INTO _SYS_REPO.PACKAGE_CATALOG(PACKAGE_ID, SRC_SYSTEM, SRC_TENANT, DESCRIPTION, RESPONSIBLE, IS_STRUCTURAL) 
+VALUES ('SHAUSER','HDB','','SHAUSER','SHAUSER',0);
+GRANT EXECUTE ON REPOSITORY_REST TO SHAUSER;
+GRANT EXECUTE ON GRANT_ACTIVATED_ROLE TO SHAUSER;
+GRANT EXECUTE ON REVOKE_ACTIVATED_ROLE TO SHAUSER;
+GRANT REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES 
+ON "SHAUSER" TO SHAUSER;
+GRANT REPO.EDIT_IMPORTED_OBJECTS, REPO.ACTIVATE_IMPORTED_OBJECTS, REPO.MAINTAIN_IMPORTED_PACKAGES 
+ON "SHAUSER" TO SHAUSER;
+
+GRANT CREATE REMOTE SOURCE TO SHAUSER;
+GRANT ADAPTER ADMIN TO SHAUSER;
+GRANT AGENT ADMIN TO SHAUSER;
+
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA SHAUSER to _SYS_REPO WITH GRANT OPTION;
+
+### To delete user ###
+# DELETE FROM _SYS_REPO.PACKAGE_CATALOG WHERE RESPONSIBLE = 'SHAUSER';
+# SELECT TOP 1000 * FROM "_SYS_REPO"."PACKAGE_CATALOG" WHERE PACKAGE_ID = 'SHAUSER';
+# DROP USER SHAUSER CASCADE;
+
+****************************
+* Loading Data into Hadoop *
+****************************
+
+# Log into Putty as the User/Password (user??) you were sent during registration (no PPK/PEM needed).
+
+wget https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0 -O AirportWebServices.dat
+
+hdfs dfs -ls /user/user??/
+hdfs dfs -mkdir /user/user??/user??.db/
+hdfs dfs -mkdir /user/user??/user??.db/AirportWebServices
+hdfs dfs -ls /user/user??/user??.db/AirportWebServices/
+hdfs dfs -put AirportWebServices.dat /user/user??/user??.db/AirportWebServices
+hdfs dfs -ls /user/user??/user??.db/AirportWebServices/
+hdfs dfs -cat /user/user??/user??.db/AirportWebServices/AirportWebServices.dat
+
+hive 
+
+create database user??;
+use user??;
+
+create table if not exists user??.airportwebservices (
+airportcode                     char(3),
+airportname                     varchar(100),
+airportstate                    varchar(100),
+airportcity                     varchar(100),
+airportlat                      double,
+airportlon                      double,
+airportservice                  varchar(100) 
+) row format delimited fields terminated by ','
+location '/user/user??/user??.db/AirportWebServices/';
+
+select * from user??.airportwebservices;
+
+*********************
+* URL to Hive JDBCs *
+*********************
+
+http://repo.hortonworks.com/content/repositories/releases/org/apache/hive/hive-jdbc/
+Use "hive-jdbc-1.2.1000.2.4.2.8-3-standalone.jar".
+
+***************************
+* Hive Remote Data Source *
+***************************
+
+DROP REMOTE SOURCE "Hadoop" CASCADE;
+
+CREATE REMOTE SOURCE "Hadoop" ADAPTER "HiveAdapter" AT LOCATION AGENT "SDI_AGENT"
+CONFIGURATION
+'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConnectionProperties name="configurations">
+    <PropertyGroup name="connectionInfo">
+        <PropertyEntry name="HOST">34.197.225.20</PropertyEntry>
+        <PropertyEntry name="PORT">10000</PropertyEntry>
+        <PropertyEntry name="DB_NAME">user??</PropertyEntry>
+        <PropertyEntry name="VERSION">1.2.1</PropertyEntry>
+    </PropertyGroup>
+    <PropertyGroup name="security">
+            <PropertyEntry name="USE_SSL">false</PropertyEntry>
+    </PropertyGroup>
+</ConnectionProperties>'
+WITH CREDENTIAL TYPE 'PASSWORD' USING
+'<CredentialEntry name="credential">
+    <user>user??</user>
+    <password>xxxxx</password>
+</CredentialEntry>';
+
+***************************
+* File Format Data Source *
+***************************
+
+# File Formats Data
+copy (instead of download) the AirportWebservices data from here:
+https://raw.githubusercontent.com/saphanaacademy/s4hana/master/AirportWebservices.csv
+and paste it into a AirportWebservices.csv file in your d:\_FileFormat\ folder
+
+the header has been added to the csv file already.
+
+cd C:\usr\sap\dataprovagent\agentutils
+
+createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
+
+*** if your cfg file does not look similar to this then you may get an error creating the virtual table ***
+
+FORMAT=CSV
+FORCE_FILENAME_PATTERN=AirportWebservices.csv
+LOCALE=en_US
+COLUMN_DELIMITER=,
+ROW_DELIMITER=
+
+TEXT_QUOTES="
+TEXT_QUOTES_ESCAPE_CHAR="
+ESCAPE_CHAR=\
+ERROR_ON_COLUMNCOUNT=false
+QUOTED_TEXT_CONTAIN_ROW_DELIMITER=true
+SKIP_HEADER_LINES=1
+COLUMN=airportcode;VARCHAR(2048)
+COLUMN=airportname;VARCHAR(2048)
+COLUMN=airportstate;VARCHAR(2048)
+COLUMN=airportcity;VARCHAR(2048)
+COLUMN=airportlat;REAL
+COLUMN=airportlon;REAL
+COLUMN=airportservice;VARCHAR(2048)
+
+DROP REMOTE SOURCE "File" CASCADE;
+
+# note that SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
+CREATE REMOTE SOURCE "File" 
+ADAPTER "FileAdapter" AT LOCATION AGENT "SDI_AGENT"
+CONFIGURATION '<?xml version="1.0" encoding="UTF-8"?>
+<ConnectionProperties name="ConnectionInfo">
+<PropertyEntry name="rootdir">D:\_FileFormat\</PropertyEntry>
+<PropertyEntry name="fileformatdir">D:\_FileFormat\</PropertyEntry>
+</ConnectionProperties>'
+WITH CREDENTIAL TYPE 'PASSWORD' USING
+  '<CredentialEntry name="AccessTokenEntry">
+    <password>S-1-5-21-*********-*********-500</password>
+  </CredentialEntry>';
+  
