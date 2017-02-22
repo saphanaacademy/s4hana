@@ -64,7 +64,9 @@ hdfs dfs -cat /user/user??/user??.db/AirportWebServices/AirportWebServices.dat
 hive 
 
 create database user??;
+show databases;
 use user??;
+show tables;
 
 create table if not exists user??.airportwebservices (
 airportcode                     char(3),
