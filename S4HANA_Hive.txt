@@ -134,19 +134,19 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING
 * File Format Data Source *
 ***************************
 
-http://scn.sap.com/community/developer-center/hana/blog/2016/01/06/hana-smart-data-integration--the-file-adapter
-
+# File Formats Data
 copy (instead of download) the AirportWebservices data from here:
 https://raw.githubusercontent.com/saphanaacademy/s4hana/master/AirportWebservices.csv
 and paste it into a AirportWebservices.csv file in your d:\_FileFormat\ folder
 
 the header has been added to the csv file already.
 
-cd C:\usr\sap\dataprovagent\agentutils
-
+cd c:\usr\sap\dataprovagent\agentutils
 createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
 
-*** if your cfg file does not look similar to this then you may get an error creating the virtual table ***
+*** if your cfg file doesn't appear OR doesn't look similar to the one below then you may get an error creating the virtual table ***
+*** therefore, create a file called AirportWebservices.csv.cfg, and open with notepad, and paste the following syntax below into it ***
+*** make sure the file isn't called AirportWebservices.csv.cfg.txt (you can do this by running Windows Explorer, select "Organize", "Folder and Search Options", then the "View" tab and deselect "Hide extensions for known file types" ***
 
 FORMAT=CSV
 FORCE_FILENAME_PATTERN=AirportWebservices.csv
@@ -168,6 +168,10 @@ COLUMN=airportlat;REAL
 COLUMN=airportlon;REAL
 COLUMN=airportservice;VARCHAR(2048)
 
+*******************************
+* File Format Data Source SDA *
+*******************************
+
 DROP REMOTE SOURCE "File" CASCADE;
 
 # note that SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
@@ -182,3 +186,4 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING
   '<CredentialEntry name="AccessTokenEntry">
     <password>S-1-5-21-*********-*********-500</password>
   </CredentialEntry>';
+  
