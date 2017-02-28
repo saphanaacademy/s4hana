@@ -125,11 +125,12 @@ and paste it into a AirportWebservices.csv file in your d:\_FileFormat\ folder
 
 the header has been added to the csv file already.
 
-cd C:\usr\sap\dataprovagent\agentutils
-
+cd c:\usr\sap\dataprovagent\agentutils
 createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
 
-*** if your cfg file does not look similar to this then you may get an error creating the virtual table ***
+*** if your cfg file doesn't appear OR doesn't look similar to the one below then you may get an error creating the virtual table ***
+*** therefore, create a file called AirportWebservices.csv.cfg, and open with notepad, and paste the following syntax below into it ***
+*** make sure the file isn't called AirportWebservices.csv.cfg.txt (you can do this by running Windows Explorer, select "Organize", "Folder and Search Options", then the "View" tab and deselect "Hide extensions for known file types" ***
 
 FORMAT=CSV
 FORCE_FILENAME_PATTERN=AirportWebservices.csv
@@ -150,6 +151,10 @@ COLUMN=airportcity;VARCHAR(2048)
 COLUMN=airportlat;REAL
 COLUMN=airportlon;REAL
 COLUMN=airportservice;VARCHAR(2048)
+
+*******************************
+* File Format Data Source SDA *
+*******************************
 
 DROP REMOTE SOURCE "File" CASCADE;
 
