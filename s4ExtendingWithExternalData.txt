@@ -210,8 +210,8 @@ https://vhcals4hci.dummy.nodomain:44300/sap/opu/odata/sap/ZXSH_C_AIRPORTQUERY_CD
 ************************
 
 Launchpad
-	https://vhcals4hci.dummy.nodomain:44301/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html
+	https://vhcals4hci.dummy.nodomain:44300/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html
 
 Launchpad Designer
-	https://vhcals4hci.dummy.nodomain:44301/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=100
+	https://vhcals4hci.dummy.nodomain:44300/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=100
 
