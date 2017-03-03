@@ -124,12 +124,12 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING
 2. Copy (instead of download) the data (Ctrl-A, Ctrl-C)
 3. Paste into Notepad (Ctrl-V)
 4. Save file as AirportWebservices.csv in your d:\_FileFormat\ folder
-   - After saving the file, make sure the file isn't called AirportWebservices.csv.txt
+5. After saving the file, make sure the file isn't called AirportWebservices.csv.txt
    -- You can do this by running Windows Explorer, and
    -- select "Organize", "Folder and Search Options", then the "View" tab
    -- de-select "Hide extensions for known file types"
-5. cd c:\usr\sap\dataprovagent\agentutils
-6. createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
+6. cd c:\usr\sap\dataprovagent\agentutils
+7. createfileformat.bat -file d:\_FileFormat\AirportWebservices.csv -cfgdir d:\_FileFormat\
    - If your cfg file doesn't appear OR doesn't look similar to the one below then you may get an error creating the virtual table
    - Therefore, create a file called AirportWebservices.csv.cfg, open with notepad, and paste the following syntax below into it
    Note; Make sure the file isn't called AirportWebservices.csv.cfg.txt
