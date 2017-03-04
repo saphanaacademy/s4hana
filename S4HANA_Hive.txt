@@ -177,7 +177,7 @@ COLUMN=airportservice;VARCHAR(2048)
 
 DROP REMOTE SOURCE "File" CASCADE;
 
-# note that SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
+-- note that SDI_AGENT is the name of the agent you registered in the DP Agent Config Tool
 CREATE REMOTE SOURCE "File" 
 ADAPTER "FileAdapter" AT LOCATION AGENT "SDI_AGENT"
 CONFIGURATION '<?xml version="1.0" encoding="UTF-8"?>
