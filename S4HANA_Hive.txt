@@ -139,7 +139,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING
    - The header has been already added to the csv file.
 2. Copy (instead of download) the data (Ctrl-A, Ctrl-C)
 3. Paste into Notepad (Ctrl-V)
-4. Save file as AirportWebservices.csv in your d:\_FileFormat\ folder
+4. Save file as AirportWebservices.csv in your d:\_FileFormat\ folder AFTER changing the “Save As Type” menu to “All Files”
 5. Note: You should verify the file extension did not add “.txt” to it when you saved it from Notepad
    -- From Windows Explorer, choose “Organize” from the top menu bar
    -- Click “Folder and Search Options”, then “View”
