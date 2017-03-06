@@ -151,6 +151,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING
    - Therefore, create a file called AirportWebservices.csv.cfg, open with notepad, and paste the following syntax below into it
    Note; Make sure the file isn't called AirportWebservices.csv.cfg.txt
 
+First line must be a comment
 FORMAT=CSV
 FORCE_FILENAME_PATTERN=AirportWebservices.csv
 LOCALE=en_US
