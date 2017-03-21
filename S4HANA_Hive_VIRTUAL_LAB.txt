@@ -3,6 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 $$ This file is specifically for the S/4 HANA Extending Data Virtual Lab, and NOT for the S/4 HANA Extending Data Video Series $$
+$$ if you want to copy and paste from this file, click the "Raw" on the top right hand side, where it is easier to do a copy/paste $$
 
 ********************
 * DP Agent Install *
