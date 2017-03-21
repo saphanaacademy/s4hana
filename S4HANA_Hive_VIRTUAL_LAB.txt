@@ -8,7 +8,7 @@ $$ This file is specifically for the S/4 HANA Extending Data Virtual Lab, and NO
 * DP Agent Install *
 ********************
 
-Get the DP Agent from SAP Development Tools (https://tools.hana.ondemand.com/#hci). 
+Get the DP Agent from SAP Development Tools (https://tools.hana.ondemand.com/#cloudintegration). 
 Only for dev/testing purposes.
 
 ************************
