@@ -53,7 +53,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA SHAUSER to _SYS_REPO WIT
 # You may want to copy the text below into notepad, and find/replace "user??" with you user number, ie. "user01", "user02", etc.
 # "IF" you want to skip the Putty/Hadoop pieces of the workshop, go straight to line 88 ("URL to Hive JDBCs"). Also ;
 # -- put the login and passwords (which you received via email) in the SDA connections (as in lines 117 and 118 below)
-# -- use user01 as the database name (as line 108 below: <PropertyEntry name="DB_NAME">user01</PropertyEntry>) as you will also have READ-ONLY access to this schema
+# -- use user01 as the database name (as line 108 below: <PropertyEntry name="DB_NAME">user01</PropertyEntry>) 
+# Note that you will also have READ-ONLY access to this schema
 
 wget https://www.dropbox.com/s/r2j63bo0o1jwtno/AirportWebServices.csv?dl=0 -O AirportWebServices.dat
 
