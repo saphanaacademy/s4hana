@@ -148,8 +148,29 @@ service namespace "ERP_SERVICES"
   key generate local "GenID"
   create forbidden update forbidden delete forbidden;
 }
- 
--- OData Queries
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."INVENTORYTURNOVERANALYSIS" as "INVENTORYTURNOVERANALYSIS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MANAGECUSTOMERITEMS" as "MANAGECUSTOMERITEMS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MATERIALDOCUMENTSOVERVIEW" as "MATERIALDOCUMENTSOVERVIEW"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
 http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
 http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
 http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/SALESORDERS?$top=5
