@@ -1,6 +1,6 @@
-#######################
-# To be ran using SSH #
-#######################
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
 
 sudo su
 [ENTER]
@@ -11,9 +11,9 @@ cd work/shadata
 wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LISTOFSALESORDERS.CSV
 cat LISTOFSALESORDERS.CSV
 
-#############################################################
-# To be ran using Web-based Development Workbench : Catalog #
-#############################################################
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
 
 DROP SCHEMA "ERPDATA" CASCADE;
 
