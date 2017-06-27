@@ -1,0 +1,68 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/MATERIALDOCUMENTSOVERVIEW.CSV
+
+cat MATERIALDOCUMENTSOVERVIEW.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."MATERIALDOCUMENTSOVERVIEW" 
+(
+	"MATERIAL_DOCUMENT" NVARCHAR(50), 
+	"MATERIAL_DOCUMENT_YEAR" BIGINT CS_FIXED, 
+	"MATERIAL" NVARCHAR(50), 
+	"MATERIAL_DESCRIPTION" NVARCHAR(50), 
+	"PLANT" NVARCHAR(50), 
+	"PLANT_NAME" NVARCHAR(50), 
+	"STORAGE_LOCATION" NVARCHAR(50), 
+	"STORAGE_LOC_NAME" NVARCHAR(50), 
+	"POSTING_DATE" DATE CS_DAYDATE, 
+	"STOCK_TYPE" BIGINT CS_FIXED, 
+	"SHORT_DESCRIPT" NVARCHAR(50), 
+	"MATERIAL_DOC_ITEM" BIGINT CS_FIXED, 
+	"STOCK_CHANGE" DECIMAL(13,2) CS_FIXED
+) UNLOAD PRIORITY 5  AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/MATERIALDOCUMENTSOVERVIEW.CSV'
+INTO "ERPDATA"."MATERIALDOCUMENTSOVERVIEW"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MATERIALDOCUMENTSOVERVIEW" as "MATERIALDOCUMENTSOVERVIEW"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/MATERIALDOCUMENTSOVERVIEW?$top=5
