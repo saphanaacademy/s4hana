@@ -1,0 +1,72 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/MANAGESUPPLIERLINEITEMS.CSV
+
+cat MANAGESUPPLIERLINEITEMS.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."MANAGESUPPLIERLINEITEMS" (
+	"SUPPLIER" NVARCHAR(50),
+	"SUPPLIER_NAME" NVARCHAR(100),
+	"COMPANY_CODE" NVARCHAR(50),
+	"COMPANY_NAME" NVARCHAR(50),
+	"FISCAL_YEAR_OF_CLEARING_JOURNAL_ENTRY" BIGINT CS_FIXED,
+	"CL_ST" BIGINT CS_FIXED,
+	"ASSIGNMENT" BIGINT CS_FIXED,
+	"JOURNAL_ENTRY_DATE" DATE CS_DAYDATE,
+	"JOURNAL_ENTRY" NVARCHAR(50),
+	"ITM" BIGINT CS_FIXED,
+	"JOURNAL_ENTRY_TYPE" NVARCHAR(50),
+	"SPECIAL_GL" NVARCHAR(50),
+	"DUE_NET" BIGINT CS_FIXED,
+	"AMOUNT_COCD_CUR" DECIMAL(13,2) CS_FIXED,
+	"LCURR" NVARCHAR(50),
+	"CLEARING_ENTRY" NVARCHAR(50),
+	"FISCAL_YEAR" BIGINT CS_FIXED
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/MANAGESUPPLIERLINEITEMS.CSV'
+INTO "ERPDATA"."MANAGESUPPLIERLINEITEMS"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MANAGESUPPLIERLINEITEMS" as "MANAGESUPPLIERLINEITEMS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/MANAGESUPPLIERLINEITEMS?$top=5
