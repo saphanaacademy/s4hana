@@ -43,3 +43,21 @@ OPTIONALLY ENCLOSED BY '"';
 # To build the OData Services #
 ###############################
 
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+service namespace "ERP_SERVICES"
+{
+"ERPSCHEMA"."LISTOFSALESORDERS" as "SALESORDERS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+ 
+-- OData Queries
+http://???:8090/ERP_SERVICES/services.xsodata/
+http://???:8090/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/ERP_SERVICES/services.xsodata/SALESORDERS?$top=5
