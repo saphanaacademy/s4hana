@@ -1,0 +1,67 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LOGOFCOLLECTIVEDELIVERYCREATION.CSV
+
+head -10 LOGOFCOLLECTIVEDELIVERYCREATION.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."LOGOFCOLLECTIVEDELIVERYCREATION" (
+	"GROUP" NVARCHAR(50),
+	"CREATED" NVARCHAR(50),
+	"CREATED_ON" DATE CS_DAYDATE,
+	"NO" BIGINT CS_FIXED,
+	"ERR" VARCHAR(50),
+	"SHPT" NVARCHAR(50),
+	"GROSS_WEIGHT" DECIMAL(17,4) CS_FIXED,
+	"WUN" NVARCHAR(50),
+	"VOLUME" NVARCHAR(50),
+	"VUN" NVARCHAR(50),
+	"MAXTIM" DECIMAL(17,4) CS_FIXED,
+	"TIME" NVARCHAR(8)
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/LOGOFCOLLECTIVEDELIVERYCREATION.CSV'
+INTO "ERPDATA"."LOGOFCOLLECTIVEDELIVERYCREATION"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."LOGOFCOLLECTIVEDELIVERYCREATION" as "LOGOFCOLLECTIVEDELIVERYCREATION"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/LOGOFCOLLECTIVEDELIVERYCREATION?$top=5
