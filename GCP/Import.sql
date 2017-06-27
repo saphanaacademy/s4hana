@@ -11,9 +11,9 @@ cd work/shadata
 wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LISTOFSALESORDERS.CSV
 cat LISTOFSALESORDERS.CSV
 
-###################################################
-# To be ran using Web-based Development Workbench #
-###################################################
+#############################################################
+# To be ran using Web-based Development Workbench : Catalog #
+#############################################################
 
 DROP SCHEMA "ERPDATA" CASCADE;
 
@@ -39,9 +39,11 @@ RECORD DELIMITED BY '\n'
 FIELD DELIMITED BY ','
 OPTIONALLY ENCLOSED BY '"';
 
-###############################
-# To build the OData Services #
-###############################
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
 
 -- .xsapp
 {}
@@ -58,6 +60,6 @@ service namespace "ERP_SERVICES"
 }
  
 -- OData Queries
-http://???:8090/ERP_SERVICES/services.xsodata/
-http://???:8090/ERP_SERVICES/services.xsodata/$metadata
-http://???:8090/ERP_SERVICES/services.xsodata/SALESORDERS?$top=5
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/SALESORDERS?$top=5
