@@ -1,7 +1,18 @@
-# To be ran using SSH
+#######################
+# To be ran using SSH #
+#######################
 
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LISTOFSALESORDERS.CSV
 
-# To be ran in Web-based Development Workbench
+###################################################
+# To be ran using Web-based Development Workbench #
+###################################################
 
 DROP SCHEMA "ERPDATA" CASCADE;
 
