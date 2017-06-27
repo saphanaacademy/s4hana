@@ -52,7 +52,7 @@ OPTIONALLY ENCLOSED BY '"';
 -- services.xsodata
 service namespace "ERP_SERVICES"
 {
-"ERPSCHEMA"."LISTOFSALESORDERS" as "SALESORDERS"
+"ERPDATA"."LISTOFSALESORDERS" as "SALESORDERS"
   key generate local "GenID"
   create forbidden update forbidden delete forbidden;
 }
