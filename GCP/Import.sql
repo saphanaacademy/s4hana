@@ -9,6 +9,7 @@ su hxeadm
 mkdir work/shadata
 cd work/shadata
 wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LISTOFSALESORDERS.CSV
+cat LISTOFSALESORDERS.CSV
 
 ###################################################
 # To be ran using Web-based Development Workbench #
