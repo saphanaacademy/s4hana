@@ -53,7 +53,6 @@ OPTIONALLY ENCLOSED BY '"';
 {"exposed": true,"authentication": [{"method" : "Basic"}]}
 
 -- services.xsodata
-
 service namespace "ERP_SERVICES"
 {
 "ERPDATA"."ASSETMASTERWORKLIST" as "ASSETMASTERWORKLIST"
