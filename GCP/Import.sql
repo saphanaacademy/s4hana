@@ -38,3 +38,8 @@ WITH
 RECORD DELIMITED BY '\n'
 FIELD DELIMITED BY ','
 OPTIONALLY ENCLOSED BY '"';
+
+###############################
+# To build the OData Services #
+###############################
+
