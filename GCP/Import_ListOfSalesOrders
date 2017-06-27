@@ -10,7 +10,7 @@ mkdir work/shadata
 cd work/shadata
 wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/LISTOFSALESORDERS.CSV
 
-cat LISTOFSALESORDERS.CSV
+head -10 LISTOFSALESORDERS.CSV
 
 ##########################################################################################
 # To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
