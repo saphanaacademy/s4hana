@@ -10,7 +10,7 @@ mkdir work/shadata
 cd work/shadata
 wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/MATERIALDOCUMENTSOVERVIEW.CSV
 
-cat MATERIALDOCUMENTSOVERVIEW.CSV
+head -10 MATERIALDOCUMENTSOVERVIEW.CSV
 
 ##########################################################################################
 # To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
