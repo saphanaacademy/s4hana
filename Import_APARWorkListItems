@@ -1,0 +1,71 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/APARWORKLISTITEMS.CSV
+
+cat APARWORKLISTITEMS.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."APARWORKLISTITEMS" (
+	"PROCESSING_STATUS" BIGINT CS_FIXED, 
+	"JOURNAL_ENTRY" VARCHAR(50), 
+	"DOC__DATE" DATE CS_DAYDATE, 
+	"PSTNG_DATE" DATE CS_DAYDATE, 
+	"ACCOUNT" NVARCHAR(50), 
+	"NAME_1" NVARCHAR(50), 
+	"ITEM_TEXT" NVARCHAR(50), 
+	"AMOUNT" DECIMAL(13,2) CS_FIXED, 
+	"JOURNAL_ENTRY_ITEM" BIGINT CS_FIXED, 
+	"COCD" DECIMAL(13,2) CS_FIXED, 
+	"FISCAL_YEAR" BIGINT CS_FIXED, 
+	"DRAFT_KEY_UUID" BIGINT CS_FIXED, 
+	"CUSTOMER" NVARCHAR(50), 
+	"SUPPLIER" NVARCHAR(50), 
+	"CRCY" NVARCHAR(50), 
+	"ACC__TYPE" NVARCHAR(50)
+) UNLOAD PRIORITY 5  AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/APARWORKLISTITEMS.CSV'
+INTO "ERPDATA"."APARWORKLISTITEMS"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."APARWORKLISTITEMS" as "APARWORKLISTITEMS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/APARWORKLISTITEMS?$top=5
