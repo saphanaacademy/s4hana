@@ -1,0 +1,76 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/MANAGEPURCHASEORDERS.CSV
+
+head -10 MANAGEPURCHASEORDERS.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."MANAGEPURCHASEORDERS" (
+	"PURCHASEORDER" BIGINT CS_FIXED,
+	"PURCHASINGDOCUMENTCATEGORY" NVARCHAR(50),
+	"PURCHASINGDOCUMENTTYPE" NVARCHAR(50),
+	"PURGDOCUMENTTYPEDESCRIPTION" NVARCHAR(50),
+	"COMPANYCODE" NVARCHAR(50),
+	"COMPANYCODENAME" NVARCHAR(50),
+	"SUPPLIER" NVARCHAR(50),
+	"SUPPLIERNAME" NVARCHAR(50),
+	"CURRENCY" NVARCHAR(50),
+	"STATUSKEY" BIGINT CS_FIXED,
+	"STATUSTEXT" NVARCHAR(50),
+	"PURCHASEORDERNETAMOUNT" BIGINT CS_FIXED,
+	"NUMBEROFITEMS" BIGINT CS_FIXED,
+	"NUMBEROFOVERDUEITEMS" BIGINT CS_FIXED,
+	"EDITSTATE" NVARCHAR(50),
+	"LOCKEDBYUSER" NVARCHAR(50),
+	"LOCKEDBYUSERFULLNAME" NVARCHAR(50),
+	"APPROVALSTATUSTEXT" NVARCHAR(50),
+	"APPROVERNAME" NVARCHAR(50),
+	"CNT" BIGINT CS_FIXED,
+	"WEIGHTEDRELEVANCE" BIGINT CS_FIXED
+) UNLOAD PRIORITY 5 AUTO MERGE 
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/MANAGEPURCHASEORDERS.CSV'
+INTO "ERPDATA"."MANAGEPURCHASEORDERS"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MANAGEPURCHASEORDERS" as "MANAGEPURCHASEORDERS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/MANAGEPURCHASEORDERS?$top=5
