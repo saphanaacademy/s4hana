@@ -1,0 +1,82 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/PURCHASINGDOCUMENTSBYMATERIAL.CSV
+
+head -10 PURCHASINGDOCUMENTSBYMATERIAL.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."PURCHASINGDOCUMENTSBYMATERIAL" (
+	"PURCH_DOC" NVARCHAR(50),
+	"ITEM" NVARCHAR(50),
+	"TYPE" NVARCHAR(50),
+	"CAT" NVARCHAR(50),
+	"PGR" BIGINT CS_FIXED,
+	"POH" NVARCHAR(50),
+	"DOC_DATE" DATE CS_DAYDATE,
+	"SUPPLIER_SUPPLYING_PLANT" NVARCHAR(50),
+	"MATL_GROUP" BIGINT CS_FIXED,
+	"D" NVARCHAR(50),
+	"I" NVARCHAR(50),
+	"A" NVARCHAR(50),
+	"PLNT" NVARCHAR(50),
+	"SLOC" NVARCHAR(50),
+	"ORDER_QUANTITY" BIGINT CS_FIXED,
+	"OUN" NVARCHAR(50),
+	"QUANTITY" DECIMAL(12,3) CS_FIXED,
+	"SKU" NVARCHAR(50),
+	"NET_PRICE" DECIMAL(12,3) CS_FIXED,
+	"CRCY" NVARCHAR(50),
+	"PER" BIGINT CS_FIXED,
+	"OPEN_TGT_QTY" BIGINT CS_FIXED,
+	"QTY_TO_BE_DEL" BIGINT CS_FIXED,
+	"VAL_TO_BE_DEL" BIGINT CS_FIXED,
+	"QTY_TO_BE_INV" BIGINT CS_FIXED,
+	"VAL_TO_BE_INV" BIGINT CS_FIXED,
+	"NUMBER" BIGINT CS_FIXED
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/PURCHASINGDOCUMENTSBYMATERIAL.CSV'
+INTO "ERPDATA"."PURCHASINGDOCUMENTSBYMATERIAL"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."PURCHASINGDOCUMENTSBYMATERIAL" as "PURCHASINGDOCUMENTSBYMATERIAL"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/PURCHASINGDOCUMENTSBYMATERIAL?$top=5
