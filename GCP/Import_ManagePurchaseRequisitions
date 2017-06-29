@@ -1,0 +1,63 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/MANAGEPURCHASEREQUISITIONS.CSV
+
+head -10 MANAGEPURCHASEREQUISITIONS.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."MANAGEPURCHASEREQUISITIONS" (
+	"ITEMS" NVARCHAR(50),
+	"DESCRIPTION" NVARCHAR(50),
+	"MATERIAL_GROUP" NVARCHAR(50),
+	"QUANTITY" BIGINT CS_FIXED,
+	"PRICE" NVARCHAR(50),
+	"ASSIGNED_SUPPLIER" NVARCHAR(50),
+	"DELIVERY_DATE" DATE CS_DAYDATE,
+	"PLANT" NVARCHAR(50)
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/MANAGEPURCHASEREQUISITIONS.CSV'
+INTO "ERPDATA"."MANAGEPURCHASEREQUISITIONS"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."MANAGEPURCHASEREQUISITIONS" as "MANAGEPURCHASEREQUISITIONS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/MANAGEPURCHASEREQUISITIONS?$top=5
