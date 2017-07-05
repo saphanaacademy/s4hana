@@ -1,0 +1,67 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/PURCHASINGGROUPACTIVITIES.CSV
+
+head -10 PURCHASINGGROUPACTIVITIES.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."PURCHASINGGROUPACTIVITIES" (
+	"PURCHASING_GROUP" BIGINT CS_FIXED,
+	"SUPPLIER" BIGINT CS_FIXED,
+	"NUMBER_OF_ORDERS" BIGINT CS_FIXED,
+	"NUMBER_OF_CONTRACTS" BIGINT CS_FIXED,
+	"SCHEDULING_AGREEMENT" BIGINT CS_FIXED,
+	"NUMBER_OF_DELIVERIES" BIGINT CS_FIXED,
+	"QUANTITY_RECEIVED" BIGINT CS_FIXED,
+	"INVOICE_AMOUNT" DECIMAL(13,2) CS_FIXED,
+	"PO_NET_AMOUNT" DECIMAL(13,2) CS_FIXED,
+	"PURCHASING_GRP_NAME" NVARCHAR(50),
+	"NAME_OF_SUPPLIER" NVARCHAR(50),
+	"DISPLAY_CURRENCY" NVARCHAR(50)
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/PURCHASINGGROUPACTIVITIES.CSV'
+INTO "ERPDATA"."PURCHASINGGROUPACTIVITIES"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."PURCHASINGGROUPACTIVITIES" as "PURCHASINGGROUPACTIVITIES"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/PURCHASINGGROUPACTIVITIES?$top=5
