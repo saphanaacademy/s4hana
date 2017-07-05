@@ -1,0 +1,69 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/OVERDUEPURCHASEORDERITEMS.CSV
+
+head -10 OVERDUEPURCHASEORDERITEMS.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."OVERDUEPURCHASEORDERITEMS" (
+	"PURCHASE_ORDER" BIGINT CS_FIXED,
+	"PURCHASE_ORDER_ITEM" BIGINT CS_FIXED,
+	"SUPPLIER" NVARCHAR(50),
+	"MATERIAL" NVARCHAR(50),
+	"OVERDUE_DAYS" BIGINT CS_FIXED,
+	"ORDERED_QUANTITY" BIGINT CS_FIXED,
+	"OPEN_PO_QUANTITY" BIGINT CS_FIXED,
+	"OPEN_NET_VALUE" DECIMAL(13,2) CS_FIXED,
+	"SUPPLIER_NAME" NVARCHAR(50),
+	"MATERIAL_DESCRIPTION" NVARCHAR(50),
+	"INT_MEAS_UNIT" NVARCHAR(50),
+	"MEASUREMT_UNIT_TEXT" NVARCHAR(50),
+	"ORDER_UNIT" NVARCHAR(50),
+	"DISPLAY_CURRENCY" NVARCHAR(50)
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/OVERDUEPURCHASEORDERITEMS.CSV'
+INTO "ERPDATA"."OVERDUEPURCHASEORDERITEMS"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."OVERDUEPURCHASEORDERITEMS" as "OVERDUEPURCHASEORDERITEMS"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/OVERDUEPURCHASEORDERITEMS?$top=5
