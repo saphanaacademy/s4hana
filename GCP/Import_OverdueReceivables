@@ -8,9 +8,9 @@ su hxeadm
 [ENTER]
 mkdir work/shadata
 cd work/shadata
-wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/INVOICESET.CSV
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/OVERDUERECEIVABLES.CSV
 
-head -10 INVOICESET.CSV
+head -10 OVERDUERECEIVABLES.CSV
 
 ##########################################################################################
 # To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
@@ -28,8 +28,8 @@ CREATE COLUMN TABLE "ERPDATA"."OVERDUERECEIVABLES" (
 	"DISPLAY_CURRENCY" NVARCHAR(10)
 ) UNLOAD PRIORITY 5 AUTO MERGE ;
 
-IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/INVOICESET.CSV'
-INTO "ERPDATA"."INVOICESET"
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/OVERDUERECEIVABLES.CSV'
+INTO "ERPDATA"."OVERDUERECEIVABLES"
 WITH
 RECORD DELIMITED BY '\n'
 FIELD DELIMITED BY ','
@@ -51,7 +51,7 @@ OPTIONALLY ENCLOSED BY '"';
 
 service namespace "ERP_SERVICES"
 {
-"ERPDATA"."INVOICESET" as "INVOICESET"
+"ERPDATA"."OVERDUERECEIVABLES" as "OVERDUERECEIVABLES"
   key generate local "GenID"
   create forbidden update forbidden delete forbidden;
 }
@@ -59,4 +59,4 @@ service namespace "ERP_SERVICES"
 -- Sample OData Queries
 http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
 http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
-http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/INVOICESET?$top=5
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/OVERDUERECEIVABLES?$top=5
