@@ -1,0 +1,66 @@
+###########################################################
+# To be ran using SSH so can get CSV files to HANA Server #
+###########################################################
+
+sudo su
+[ENTER]
+su hxeadm
+[ENTER]
+mkdir work/shadata
+cd work/shadata
+wget https://raw.githubusercontent.com/saphanaacademy/s4hana/master/GCP/SALESANDBILLING.CSV
+
+head -10 SALESANDBILLING.CSV
+
+##########################################################################################
+# To build tables & load data. To be ran using Web-based Development Workbench : Catalog #
+##########################################################################################
+
+CREATE SCHEMA "ERPDATA";
+
+CREATE COLUMN TABLE "ERPDATA"."SALESANDBILLING" (
+	"DATEPOSTED" DATE CS_DAYDATE,
+	"DOC_TYPE" NVARCHAR(10),
+	"COLLECT_NO" BIGINT CS_FIXED,
+	"SALES_ORG" NVARCHAR(25),
+	"DISTR_CHAN" NVARCHAR(25),
+	"DIVISION" NVARCHAR(25),
+	"REQ_DATE_H" DATE CS_DAYDATE,
+	"MATERIAL" NVARCHAR(50),
+	"QUANTITY" BIGINT CS_FIXED,
+	"SOLDTO" NVARCHAR(50),
+	"SHIPTO" NVARCHAR(50)
+) UNLOAD PRIORITY 5 AUTO MERGE ;
+
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/shadata/SALESANDBILLING.CSV'
+INTO "ERPDATA"."SALESANDBILLING"
+WITH
+RECORD DELIMITED BY '\n'
+FIELD DELIMITED BY ','
+OPTIONALLY ENCLOSED BY '"';
+
+##############################################################################
+# To build the OData Services using Web-based Development Workbench : Editor #
+##############################################################################
+
+-- create package, ie. googlecloudcontest
+
+-- .xsapp
+{}
+
+-- .xsaccess
+{"exposed": true,"authentication": [{"method" : "Basic"}]}
+
+-- services.xsodata
+
+service namespace "ERP_SERVICES"
+{
+"ERPDATA"."SALESANDBILLING" as "SALESANDBILLING"
+  key generate local "GenID"
+  create forbidden update forbidden delete forbidden;
+}
+
+-- Sample OData Queries
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/$metadata
+http://???:8090/googlecloudcontest/ERP_SERVICES/services.xsodata/SALESANDBILLING?$top=5
